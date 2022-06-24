@@ -1,0 +1,747 @@
+<object id="#15790" type="hkbStateMachineStateInfo">
+    <ref name="transitions">#15791</ref>
+    <ref name="generator">#15802</ref>
+    <string name="name">ChainSword Evade</string>
+    <int name="stateId">2</int>
+    <real name="probability">x3f800000 <!-- 1.0 --></real>
+    <byte name="enable">1</byte>
+    <int name="interactionPort">-1</int>
+    <int name="interactionHandleIndex">-1</int>
+    <byte name="conduitStatusDirty">1</byte>
+  </object>
+  <object id="#15791" type="hkbStateMachineTransitionInfoArray">
+    <array name="transitions" size="4">
+      <struct>
+        <ref name="transition">#15792</ref>
+        <int name="eventId">-1</int>
+        <int name="toStateId">4</int>
+        <int name="priority">3</int>
+        <int name="branchId">16</int>
+        <int name="flags">256</int>
+        <int name="startStateIdx">-1</int>
+        <int name="enableBinding">-1</int>
+      </struct>
+      <struct>
+        <ref name="transition">#15793</ref>
+        <ref name="condition">#15794</ref>
+        <int name="eventId">-1</int>
+        <int name="toStateId">4</int>
+        <int name="priority">4</int>
+        <int name="branchId">15</int>
+        <int name="startStateIdx">-1</int>
+        <int name="enableBinding">-1</int>
+      </struct>
+      <struct>
+        <ref name="transition">#15795</ref>
+        <int name="eventId">20</int>
+        <int name="toStateId">5</int>
+        <int name="priority">2</int>
+        <int name="branchId">18</int>
+        <int name="flags">256</int>
+        <int name="startStateIdx">-1</int>
+        <int name="enableBinding">-1</int>
+      </struct>
+      <struct>
+        <ref name="transition">#15796</ref>
+        <int name="eventId">-1</int>
+        <int name="toStateId">1</int>
+        <int name="priority">1</int>
+        <int name="branchId">2</int>
+        <int name="flags">256</int>
+        <int name="startStateIdx">-1</int>
+        <int name="enableBinding">-1</int>
+      </struct>
+    </array>
+  </object>
+  <object id="#15792" type="hkbBlendingTransitionEffect">
+    <string name="name">CustomTransitionEffect12</string>
+    <int name="id">-1</int>
+    <int name="branchInId">-1</int>
+    <int name="syncBranchId">-1</int>
+    <real name="duration">x3dcccccd <!-- 0.1 --></real>
+  </object>
+  <object id="#15793" type="hkbBlendingTransitionEffect">
+    <string name="name">CustomTransitionEffect17</string>
+    <int name="id">-1</int>
+    <int name="branchInId">-1</int>
+    <int name="syncBranchId">-1</int>
+    <real name="duration">x3e88888a <!-- 0.266667 --></real>
+  </object>
+  <object id="#15794" type="hkbThresholdCondition">
+    <real name="minRange">x3f000000 <!-- 0.5 --></real>
+    <real name="maxRange">x447a0000 <!-- 1000.0 --></real>
+    <int name="inputValue">28</int>
+  </object>
+  <object id="#15795" type="hkbBlendingTransitionEffect">
+    <string name="name">CustomTransitionEffect19</string>
+    <int name="id">-1</int>
+    <int name="branchInId">-1</int>
+    <int name="syncBranchId">-1</int>
+    <real name="duration">x3dcccccd <!-- 0.1 --></real>
+  </object>
+  <object id="#15796" type="hkbBlendingTransitionEffect">
+    <string name="name">Blend Three Frame</string>
+    <int name="id">-1</int>
+    <int name="branchInId">-1</int>
+    <int name="syncBranchId">-1</int>
+    <real name="duration">x3dcccccd <!-- 0.1 --></real>
+  </object>
+  <object id="#15797" type="hkbBlendingTransitionEffect">
+    <string name="name">CustomTransitionEffect13</string>
+    <int name="id">-1</int>
+    <int name="branchInId">-1</int>
+    <int name="syncBranchId">-1</int>
+    <real name="duration">x3dcccccd <!-- 0.1 --></real>
+  </object>
+  <object id="#15798" type="hkbBoolCondition">
+    <array name="falseBooleans" size="1">
+      <struct>
+        <int name="boolVariableIndex">26</int>
+      </struct>
+    </array>
+  </object>
+  <object id="#15799" type="hkbBlendingTransitionEffect">
+    <string name="name">CustomTransitionEffect11</string>
+    <int name="id">-1</int>
+    <int name="branchInId">-1</int>
+    <int name="syncBranchId">-1</int>
+    <real name="duration">x3dcccccd <!-- 0.1 --></real>
+  </object>
+  <object id="#15800" type="hkbMultiCondition">
+    <array name="conditions" size="2">
+      <ref>#15798</ref>
+      <ref>#15801</ref>
+    </array>
+  </object>
+  <object id="#15801" type="hkbBoolCondition">
+    <array name="trueBooleans" size="1">
+      <struct>
+        <int name="boolVariableIndex">14</int>
+      </struct>
+    </array>
+  </object>
+  <object id="#15802" type="hkbModifierGenerator">
+    <string name="name">CS - BP Evade</string>
+    <int name="id">-1</int>
+    <ref name="modifier">#15803</ref>
+    <ref name="generator">#15804</ref>
+  </object>  
+  <object id="#15803" type="hkbModifierList">
+    <string name="name">ModifierList03</string>
+    <int name="id">-1</int>
+    <byte name="enable">1</byte>
+    <array name="modifiers" size="3">
+      <ref>#15805</ref>
+      <ref>#15806</ref>
+      <ref>#15807</ref>
+    </array>
+  </object>
+  <object id="#15805" type="hkbAbilityModifier">
+    <string name="name">Evade Ability</string>
+    <int name="id">-1</int>
+    <byte name="enable">1</byte>
+    <string name="abilityKey">Ability_Evade</string>
+    <int name="wargearSource">5</int>
+    <int name="test">10</int>
+  </object>
+  <object id="#15806" type="hkbOnConditionModifier">
+    <string name="name">Weapons - Melee and Ranged ( Pistol Check )</string>
+    <int name="id">-1</int>
+    <byte name="enable">1</byte>
+    <ref name="modifierOnTrue">#15808</ref>
+    <ref name="modifierOnFalse">#15809</ref>
+    <ref name="triggerCondition">#15810</ref>
+  </object>
+  <object id="#15808" type="hkbEntityPropertyControlsModifier">
+    <ref name="variableBindingSet">#15811</ref>
+    <string name="name">Weapons - Melee and Ranged Weapons</string>
+    <int name="id">-1</int>
+    <byte name="enable">1</byte>
+    <ref name="controlData">#15812</ref>
+  </object>
+  <object id="#15811" type="hkbVariableBindingSet">
+    <array name="bindings" size="1">
+      <struct>
+        <string name="memberPath">enable</string>
+        <int name="variableIndex">35</int>
+        <int name="bitIndex">-1</int>
+      </struct>
+    </array>
+  </object>
+  <object id="#15812" type="hkbEntityPropertyWeaponData">
+    <int name="meleeWeaponDeployed">1</int>
+    <int name="rangeWeaponDeployed">1</int>
+    <int name="exoticWeaponDeployed">2</int>
+  </object>  
+  <object id="#15809" type="hkbEntityPropertyControlsModifier">
+    <string name="name">Weapons - Melee Weapon</string>
+    <int name="id">-1</int>
+    <byte name="enable">1</byte>
+    <ref name="controlData">#15813</ref>
+  </object>
+  <object id="#15813" type="hkbEntityPropertyWeaponData">
+    <int name="meleeWeaponDeployed">1</int>
+    <int name="rangeWeaponDeployed">2</int>
+    <int name="exoticWeaponDeployed">2</int>
+  </object>
+  <object id="#15810" type="hkbMultiCondition">
+    <byte name="trueIfAny">1</byte>
+    <array name="conditions" size="2">
+      <ref>#15814</ref>
+      <ref>#15815</ref>
+    </array>
+  </object>
+  <object id="#15814" type="hkbBoolCondition">
+    <array name="trueBooleans" size="1">
+      <struct>
+        <int name="boolVariableIndex">35</int>
+      </struct>
+    </array>
+  </object>
+  <object id="#15815" type="hkbBoolCondition">
+    <array name="trueBooleans" size="1">
+      <struct>
+        <int name="boolVariableIndex">39</int>
+      </struct>
+    </array>
+  </object>  
+  <object id="#15807" type="hkbEntityPropertyControlsModifier">
+    <string name="name">AllowReloadEntityPropertyControlsModifier</string>
+    <int name="id">-1</int>
+    <byte name="enable">1</byte>
+    <ref name="controlData">#15816</ref>
+  </object>
+  <object id="#15816" type="hkbEntityPropertyAllowReload">
+  </object>
+  <object id="#15804" type="hkbStateMachine">
+    <string name="name">Chainsword Evade</string>
+    <int name="id">-1</int>
+    <struct name="eventToSendWhenStateOrTransitionChanges">
+      <int name="id">-1</int>
+    </struct>
+    <ref name="startStateChooser">#15817</ref>
+    <int name="returnToPreviousStateEventId">-1</int>
+    <int name="randomTransitionEventId">-1</int>
+    <int name="transitionToNextHigherStateEventId">-1</int>
+    <int name="transitionToNextLowerStateEventId">-1</int>
+    <int name="syncVariableIndex">-1</int>
+    <int name="maxSimultaneousTransitions">32</int>
+    <int name="startStateMode">3</int>
+    <array name="states" size="4">
+      <ref>#15818</ref>
+      <ref>#15819</ref>
+      <ref>#15820</ref>
+      <ref>#15821</ref>
+    </array>
+    <int name="nextStartStateIndexOverride">-1</int>
+  </object>
+  <object id="#15817" type="hkbConditionChooser">
+    <array name="entries" size="4">
+      <ref>#15822</ref>
+      <ref>#15823</ref>
+      <ref>#15824</ref>
+      <ref>#15829</ref>
+    </array>
+  </object>
+  <object id="#15822" type="hkbConditionChooserConditionEntry">
+    <ref name="condition">#15826</ref>
+  </object>
+  <object id="#15826" type="hkbThresholdCondition">
+    <real name="minRange">xc2340000 <!-- -45.0 --></real>
+    <real name="maxRange">x42340000 <!-- 45.0 --></real>
+    <int name="inputValue">16</int>
+  </object>
+  <object id="#15823" type="hkbConditionChooserConditionEntry">
+    <int name="stateId">1</int>
+    <ref name="condition">#15827</ref>
+  </object>
+  <object id="#15827" type="hkbThresholdCondition">
+    <real name="minRange">xc3070000 <!-- -135.0 --></real>
+    <real name="maxRange">x43070000 <!-- 135.0 --></real>
+    <byte name="invert">1</byte>
+    <int name="inputValue">16</int>
+  </object>
+  <object id="#15824" type="hkbConditionChooserConditionEntry">
+    <int name="stateId">2</int>
+    <ref name="condition">#15828</ref>
+  </object>
+  <object id="#15828" type="hkbThresholdCondition">
+    <real name="minRange">xc3070000 <!-- -135.0 --></real>
+    <real name="maxRange">xc2340000 <!-- -45.0 --></real>
+    <int name="inputValue">16</int>
+  </object>
+  <object id="#15829" type="hkbConditionChooserConditionEntry">
+    <int name="stateId">3</int>
+    <ref name="condition">#15830</ref>
+  </object>
+  <object id="#15830" type="hkbThresholdCondition">
+    <real name="minRange">x42340000 <!-- 45.0 --></real>
+    <real name="maxRange">x43070000 <!-- 135.0 --></real>
+    <int name="inputValue">16</int>
+  </object>
+  <object id="#15818" type="hkbStateMachineStateInfo">
+    <ref name="enterNotifyEvents">#15831</ref>
+    <ref name="generator">#15832</ref>
+    <string name="name">Evade Fwd</string>
+    <real name="probability">x3f800000 <!-- 1.0 --></real>
+    <byte name="enable">1</byte>
+    <int name="interactionPort">-1</int>
+    <int name="interactionHandleIndex">-1</int>
+    <byte name="conduitStatusDirty">1</byte>
+  </object>
+  <object id="#15831" type="hkbStateMachineEventPropertyArray">
+    <array name="events" size="1">
+      <struct>
+        <int name="id">17</int>
+      </struct>
+    </array>
+  </object>
+  <object id="#15832" type="hkbSequencerGenerator">
+    <string name="name">CS EVD Fwd</string>
+    <int name="id">-1</int>
+    <array name="tags" size="11">
+      <ref>#15833</ref>
+      <ref>#15834</ref>
+      <ref>#15835</ref>
+      <ref>#15836</ref>
+      <ref>#15837</ref>
+      <ref>#15838</ref>
+      <ref>#15839</ref>
+      <ref>#15840</ref>
+      <ref>#15841</ref>
+      <ref>#15842</ref>
+      <ref>#15843</ref>
+    </array>
+    <ref name="generator">#15844</ref>
+  </object>
+  <object id="#15833" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3eea0ea2 <!-- 0.457143 --></real>
+    <real name="openFraction">x3f124925 <!-- 0.571429 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">15</int>
+  </object>
+  <object id="#15834" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3ea3677c <!-- 0.319149 --></real>
+    <real name="openFraction">x3f457c58 <!-- 0.771429 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">2</int>
+  </object>
+  <object id="#15835" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3f800000 <!-- 1.0 --></real>
+    <real name="openFraction">x3f800000 <!-- 1.0 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">16</int>
+  </object>
+  <object id="#15836" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3f457c58 <!-- 0.771429 --></real>
+    <real name="openFraction">x3f457c58 <!-- 0.771429 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">6</int>
+  </object>
+  <object id="#15837" type="hkbEntityPropertySequenceTag">
+    <real name="closedFraction">x3e59df55 <!-- 0.212766 --></real>
+    <ref name="property">#15845</ref>
+  </object>
+  <object id="#15845" type="hkbEntityPropertyTargetableModeData">
+    <int name="targetableMode">1</int>
+  </object>
+  <object id="#15838" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3ecefa8d <!-- 0.404255 --></real>
+    <real name="openFraction">x3f457c58 <!-- 0.771429 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">7</int>
+  </object>
+  <object id="#15839" type="hkbActionSequenceTag">
+    <real name="closedFraction">x3d08888a <!-- 0.0333333 --></real>
+    <string name="actionName">FX_Evade_Start</string>
+  </object>
+  <object id="#15840" type="hkbActionSequenceTag">
+    <real name="openFraction">x3e59df55 <!-- 0.212766 --></real>
+    <real name="closedFraction">x3ec415c9 <!-- 0.382979 --></real>
+    <string name="actionName">FX_Evade_Roll</string>
+  </object>
+  <object id="#15841" type="hkbActionSequenceTag">
+    <real name="openFraction">x3ed55556 <!-- 0.416667 --></real>
+    <real name="closedFraction">x3f000000 <!-- 0.5 --></real>
+    <string name="actionName">FX_Evade_End</string>
+  </object>
+  <object id="#15842" type="hkbAttackAlignmentSequenceTag">
+    <ref name="variableBindingSet">#15846</ref>
+    <real name="closedFraction">x3dcccccd <!-- 0.1 --></real>
+    <vec4 name="defaultDirection">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec4>
+    <byte name="clampRotation">1</byte>
+    <real name="maxRotation">x44340000 <!-- 720.0 --></real>
+    <vec4 name="targetDirection">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec4>
+    <vec4 name="cachedDirection">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec4>
+  </object>
+  <object id="#15846" type="hkbVariableBindingSet">
+    <array name="bindings" size="1">
+      <struct>
+        <string name="memberPath">defaultDirection</string>
+        <int name="variableIndex">3</int>
+        <int name="bitIndex">-1</int>
+      </struct>
+    </array>
+    <int name="indexOfBindingToEnable">-1</int>
+  </object>
+  <object id="#15843" type="hkbEntityPropertySequenceTag">
+    <real name="closedFraction">x3eefa8da <!-- 0.468085 --></real>
+    <ref name="property">#15847</ref>
+  </object>
+  <object id="#15847" type="hkbEntityPropertyCollisionModeData">
+    <int name="collisionMode">1</int>
+  </object>
+  <object id="#15844" type="hkbClipGenerator">
+    <string name="name">SM_EVD_F_01_4ma03</string>
+    <int name="id">-1</int>
+    <string name="animationName">SM_EVD_CS_Roll_F_01_6m.hkxa</string>
+    <real name="playbackSpeed">x3f800000 <!-- 1.0 --></real>
+    <int name="animationBindingIndex">-1</int>
+    <vec12 name="extractedMotion">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec12>
+  </object>
+  <object id="#15819" type="hkbStateMachineStateInfo">
+    <ref name="enterNotifyEvents">#15848</ref>
+    <ref name="generator">#15849</ref>
+    <string name="name">Evade Bck</string>
+    <int name="stateId">1</int>
+    <real name="probability">x3f800000 <!-- 1.0 --></real>
+    <byte name="enable">1</byte>
+    <int name="interactionPort">-1</int>
+    <int name="interactionHandleIndex">-1</int>
+    <byte name="conduitStatusDirty">1</byte>
+  </object>
+  <object id="#15848" type="hkbStateMachineEventPropertyArray">
+    <array name="events" size="1">
+      <struct>
+        <int name="id">17</int>
+      </struct>
+    </array>
+  </object>
+  <object id="#15849" type="hkbSequencerGenerator">
+    <string name="name">CS Evade Bck</string>
+    <int name="id">-1</int>
+    <array name="tags" size="11">
+      <ref>#15850</ref>
+      <ref>#15851</ref>
+      <ref>#15852</ref>
+      <ref>#15853</ref>
+      <ref>#15854</ref>
+      <ref>#15855</ref>
+      <ref>#15856</ref>
+      <ref>#15857</ref>
+      <ref>#15858</ref>
+      <ref>#15859</ref>
+      <ref>#15860</ref>
+    </array>
+    <ref name="generator">#15861</ref>
+  </object>
+  <object id="#15850" type="hkbEntityPropertySequenceTag">
+    <real name="closedFraction">x3e59df55 <!-- 0.212766 --></real>
+    <ref name="property">#15845</ref>
+  </object>
+  <object id="#15851" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3ea0ea0e <!-- 0.314286 --></real>
+    <real name="openFraction">x3f457c58 <!-- 0.771429 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">2</int>
+  </object>
+  <object id="#15852" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3f800000 <!-- 1.0 --></real>
+    <real name="openFraction">x3f800000 <!-- 1.0 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">16</int>
+  </object>
+  <object id="#15853" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3eea0ea2 <!-- 0.457143 --></real>
+    <real name="openFraction">x3f124925 <!-- 0.571429 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">15</int>
+  </object>
+  <object id="#15854" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3ed9df51 <!-- 0.425532 --></real>
+    <real name="openFraction">x3f457c58 <!-- 0.771429 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">7</int>
+  </object>
+  <object id="#15855" type="hkbEntityPropertySequenceTag">
+    <real name="closedFraction">x3eefa8da <!-- 0.468085 --></real>
+    <ref name="property">#15847</ref>
+  </object>
+  <object id="#15856" type="hkbAttackAlignmentSequenceTag">
+    <ref name="variableBindingSet">#15862</ref>
+    <real name="closedFraction">x3dcccccd <!-- 0.1 --></real>
+    <vec4 name="defaultDirection">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec4>
+    <byte name="clampRotation">1</byte>
+    <real name="maxRotation">x44340000 <!-- 720.0 --></real>
+    <real name="offsetRotation">x43340000 <!-- 180.0 --></real>
+    <vec4 name="targetDirection">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec4>
+    <vec4 name="cachedDirection">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec4>
+  </object>
+  <object id="#15862" type="hkbVariableBindingSet">
+    <array name="bindings" size="1">
+      <struct>
+        <string name="memberPath">defaultDirection</string>
+        <int name="variableIndex">3</int>
+        <int name="bitIndex">-1</int>
+      </struct>
+    </array>
+    <int name="indexOfBindingToEnable">-1</int>
+  </object>
+  <object id="#15857" type="hkbActionSequenceTag">
+    <real name="closedFraction">x3d08888a <!-- 0.0333333 --></real>
+    <string name="actionName">FX_Evade_Start</string>
+  </object>
+  <object id="#15858" type="hkbActionSequenceTag">
+    <real name="openFraction">x3e59df55 <!-- 0.212766 --></real>
+    <real name="closedFraction">x3ec415c9 <!-- 0.382979 --></real>
+    <string name="actionName">FX_Evade_Roll</string>
+  </object>
+  <object id="#15859" type="hkbActionSequenceTag">
+    <real name="openFraction">x3ed55556 <!-- 0.416667 --></real>
+    <real name="closedFraction">x3f000000 <!-- 0.5 --></real>
+    <string name="actionName">FX_Evade_End</string>
+  </object>
+  <object id="#15860" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3ea3677c <!-- 0.319149 --></real>
+    <real name="openFraction">x3f457c58 <!-- 0.771429 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">18</int>
+  </object>
+  <object id="#15861" type="hkbClipGenerator">
+    <string name="name">SM EVD CS Dodge B 01 6m.hkxa</string>
+    <int name="id">-1</int>
+    <string name="animationName">SM_EVD_CS_Roll_B_01_8m.hkxa</string>
+    <real name="playbackSpeed">x3f800000 <!-- 1.0 --></real>
+    <int name="animationBindingIndex">-1</int>
+    <vec12 name="extractedMotion">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec12>
+  </object>
+  <object id="#15820" type="hkbStateMachineStateInfo">
+    <ref name="enterNotifyEvents">#15863</ref>
+    <ref name="generator">#15864</ref>
+    <string name="name">Evade Lft</string>
+    <int name="stateId">2</int>
+    <real name="probability">x3f800000 <!-- 1.0 --></real>
+    <byte name="enable">1</byte>
+    <int name="interactionPort">-1</int>
+    <int name="interactionHandleIndex">-1</int>
+    <byte name="conduitStatusDirty">1</byte>
+  </object>
+  <object id="#15863" type="hkbStateMachineEventPropertyArray">
+    <array name="events" size="1">
+      <struct>
+        <int name="id">17</int>
+      </struct>
+    </array>
+  </object>
+  <object id="#15864" type="hkbSequencerGenerator">
+    <string name="name">SequencerGenerator12</string>
+    <int name="id">-1</int>
+    <array name="tags" size="10">
+      <ref>#15865</ref>
+      <ref>#15866</ref>
+      <ref>#15867</ref>
+      <ref>#15868</ref>
+      <ref>#15869</ref>
+      <ref>#15870</ref>
+      <ref>#15871</ref>
+      <ref>#15872</ref>
+      <ref>#15873</ref>
+      <ref>#15874</ref>
+    </array>
+    <ref name="generator">#15875</ref>
+  </object>
+  <object id="#15865" type="hkbAttackAlignmentSequenceTag">
+    <ref name="variableBindingSet">#15876</ref>
+    <real name="closedFraction">x3e6eeeed <!-- 0.233333 --></real>
+    <vec4 name="defaultDirection">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec4>
+    <byte name="clampRotation">1</byte>
+    <real name="maxRotation">x44340000 <!-- 720.0 --></real>
+    <real name="offsetRotation">xc2b40000 <!-- -90.0 --></real>
+    <vec4 name="targetDirection">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec4>
+    <vec4 name="cachedDirection">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec4>
+  </object>
+  <object id="#15876" type="hkbVariableBindingSet">
+    <array name="bindings" size="1">
+      <struct>
+        <string name="memberPath">defaultDirection</string>
+        <int name="variableIndex">3</int>
+        <int name="bitIndex">-1</int>
+      </struct>
+    </array>
+    <int name="indexOfBindingToEnable">-1</int>
+  </object>
+  <object id="#15866" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3f800000 <!-- 1.0 --></real>
+    <real name="openFraction">x3f800000 <!-- 1.0 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">16</int>
+  </object>
+  <object id="#15867" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3eea0ea2 <!-- 0.457143 --></real>
+    <real name="openFraction">x3f124925 <!-- 0.571429 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">15</int>
+  </object>
+  <object id="#15868" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3ed9df51 <!-- 0.425532 --></real>
+    <real name="openFraction">x3f457c58 <!-- 0.771429 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">7</int>
+  </object>
+  <object id="#15869" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3ea3677c <!-- 0.319149 --></real>
+    <real name="openFraction">x3f457c58 <!-- 0.771429 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">2</int>
+  </object>
+  <object id="#15870" type="hkbEntityPropertySequenceTag">
+    <real name="closedFraction">x3e59df55 <!-- 0.212766 --></real>
+    <ref name="property">#15845</ref>
+  </object>
+  <object id="#15871" type="hkbEntityPropertySequenceTag">
+    <real name="closedFraction">x3eefa8da <!-- 0.468085 --></real>
+    <ref name="property">#15847</ref>
+  </object>
+  <object id="#15872" type="hkbActionSequenceTag">
+    <real name="closedFraction">x3d08888a <!-- 0.0333333 --></real>
+    <string name="actionName">FX_Evade_Start</string>
+  </object>
+  <object id="#15873" type="hkbActionSequenceTag">
+    <real name="openFraction">x3e59df55 <!-- 0.212766 --></real>
+    <real name="closedFraction">x3ec415c9 <!-- 0.382979 --></real>
+    <string name="actionName">FX_Evade_Roll</string>
+  </object>
+  <object id="#15874" type="hkbActionSequenceTag">
+    <real name="openFraction">x3ed9df51 <!-- 0.425532 --></real>
+    <real name="closedFraction">x3f02b931 <!-- 0.510638 --></real>
+    <string name="actionName">FX_Evade_End</string>
+  </object>
+  <object id="#15875" type="hkbClipGenerator">
+    <string name="name">SM EVD CS Roll L 01 8m.hkxa</string>
+    <int name="id">-1</int>
+    <string name="animationName">SM_EVD_CS_Roll_L_01_8m.hkxa</string>
+    <real name="playbackSpeed">x3f800000 <!-- 1.0 --></real>
+    <int name="animationBindingIndex">-1</int>
+    <vec12 name="extractedMotion">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec12>
+  </object>
+  <object id="#15821" type="hkbStateMachineStateInfo">
+    <ref name="enterNotifyEvents">#15877</ref>
+    <ref name="generator">#15878</ref>
+    <string name="name">Evade Rgt</string>
+    <int name="stateId">3</int>
+    <real name="probability">x3f800000 <!-- 1.0 --></real>
+    <byte name="enable">1</byte>
+    <int name="interactionPort">-1</int>
+    <int name="interactionHandleIndex">-1</int>
+    <byte name="conduitStatusDirty">1</byte>
+  </object>
+  <object id="#15877" type="hkbStateMachineEventPropertyArray">
+    <array name="events" size="1">
+      <struct>
+        <int name="id">17</int>
+      </struct>
+    </array>
+  </object>
+  <object id="#15878" type="hkbSequencerGenerator">
+    <string name="name">SequencerGenerator13</string>
+    <int name="id">-1</int>
+    <array name="tags" size="10">
+      <ref>#15879</ref>
+      <ref>#15880</ref>
+      <ref>#15881</ref>
+      <ref>#15882</ref>
+      <ref>#15883</ref>
+      <ref>#15884</ref>
+      <ref>#15885</ref>
+      <ref>#15886</ref>
+      <ref>#15887</ref>
+      <ref>#15888</ref>
+    </array>
+    <ref name="generator">#15889</ref>
+  </object>
+  <object id="#15879" type="hkbAttackAlignmentSequenceTag">
+    <ref name="variableBindingSet">#15890</ref>
+    <real name="closedFraction">x3e6eeeed <!-- 0.233333 --></real>
+    <vec4 name="defaultDirection">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec4>
+    <byte name="clampRotation">1</byte>
+    <real name="maxRotation">x44340000 <!-- 720.0 --></real>
+    <real name="offsetRotation">x42b40000 <!-- 90.0 --></real>
+    <vec4 name="targetDirection">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec4>
+    <vec4 name="cachedDirection">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec4>
+  </object>
+  <object id="#15890" type="hkbVariableBindingSet">
+    <array name="bindings" size="1">
+      <struct>
+        <string name="memberPath">defaultDirection</string>
+        <int name="variableIndex">3</int>
+        <int name="bitIndex">-1</int>
+      </struct>
+    </array>
+    <int name="indexOfBindingToEnable">-1</int>
+  </object>
+  <object id="#15880" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3f800000 <!-- 1.0 --></real>
+    <real name="openFraction">x3f800000 <!-- 1.0 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">16</int>
+  </object>
+  <object id="#15881" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3eea0ea2 <!-- 0.457143 --></real>
+    <real name="openFraction">x3f124925 <!-- 0.571429 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">15</int>
+  </object>
+  <object id="#15882" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3ea3677c <!-- 0.319149 --></real>
+    <real name="openFraction">x3f457c58 <!-- 0.771429 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">2</int>
+  </object>
+  <object id="#15883" type="hkbBranchSequenceTag">
+    <real name="bufferFraction">x3ec415c9 <!-- 0.382979 --></real>
+    <real name="openFraction">x3f457c58 <!-- 0.771429 --></real>
+    <real name="closedFraction">x3f800000 <!-- 1.0 --></real>
+    <int name="branchId">7</int>
+  </object>
+  <object id="#15884" type="hkbEntityPropertySequenceTag">
+    <real name="closedFraction">x3e59df55 <!-- 0.212766 --></real>
+    <ref name="property">#15845</ref>
+  </object>
+  <object id="#15885" type="hkbEntityPropertySequenceTag">
+    <real name="closedFraction">x3eefa8da <!-- 0.468085 --></real>
+    <ref name="property">#15847</ref>
+  </object>
+  <object id="#15886" type="hkbActionSequenceTag">
+    <real name="closedFraction">x3d08888a <!-- 0.0333333 --></real>
+    <string name="actionName">FX_Evade_Start</string>
+  </object>
+  <object id="#15887" type="hkbActionSequenceTag">
+    <real name="openFraction">x3e59df55 <!-- 0.212766 --></real>
+    <real name="closedFraction">x3ec415c9 <!-- 0.382979 --></real>
+    <string name="actionName">FX_Evade_Roll</string>
+  </object>
+  <object id="#15888" type="hkbActionSequenceTag">
+    <real name="openFraction">x3ed55556 <!-- 0.416667 --></real>
+    <real name="closedFraction">x3f000000 <!-- 0.5 --></real>
+    <string name="actionName">FX_Evade_End</string>
+  </object>
+  <object id="#15889" type="hkbClipGenerator">
+    <string name="name">SM EVD CS Roll R 01 8m.hkxa</string>
+    <int name="id">-1</int>
+    <string name="animationName">SM_EVD_CS_Roll_R_01_8m.hkxa</string>
+    <real name="playbackSpeed">x3f800000 <!-- 1.0 --></real>
+    <int name="animationBindingIndex">-1</int>
+    <vec12 name="extractedMotion">x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --> x00000000 <!-- 0.0 --></vec12>
+  </object>
+  <object id="#15891" type="hkbBlendingTransitionEffect">
+    <string name="name">Nav To Evade</string>
+    <int name="id">-1</int>
+    <int name="branchInId">-1</int>
+    <int name="syncBranchId">-1</int>
+    <real name="duration">x3dcccccd <!-- 0.1 --></real>
+  </object>
+  <object id="#15892" type="hkbThresholdCondition">
+    <real name="minRange">x3f000000 <!-- 0.5 --></real>
+    <real name="maxRange">x447a0000 <!-- 1000.0 --></real>
+    <int name="inputValue">28</int>
+  </object>

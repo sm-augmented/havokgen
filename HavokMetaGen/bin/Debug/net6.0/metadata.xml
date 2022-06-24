@@ -1,0 +1,1550 @@
+<?xml version="1.0" encoding="ascii"?>
+<root>
+	<class name="hkRootLevelContainer" version="0">
+		<member name="namedVariants" type="struct" array="true" class="hkRootLevelContainerNamedVariant"/>
+	</class>
+	<class name="hkRootLevelContainerNamedVariant" version="0">
+		<member name="name" type="string"/>
+		<member name="className" type="string"/>
+		<member name="variant" type="ref" class="hkReferencedObject"/>
+	</class>
+	<class name="hkBaseObject" version="0">
+	</class>
+	<class name="hkReferencedObject" version="0" parent="hkBaseObject">
+		<member name="memSizeAndFlags" type="int"/>
+		<member name="referenceCount" type="int"/>
+	</class>
+	<class name="hkCombinerTOC" version="0" parent="hkReferencedObject">
+		<member name="toc" type="ref" array="true" class="hkCombinerTOCTOCEntry"/>
+	</class>
+	<class name="hkCombinerTOCTOCEntry" version="0">
+		<member name="name" type="byte" array="true"/>
+		<member name="ext" type="byte" array="true"/>
+		<member name="hash" type="int"/>
+		<member name="num" type="byte"/>
+	</class>
+	<class name="hkaAnimationContainer" version="1" parent="hkReferencedObject">
+		<member name="skeletons" type="ref" array="true" class="hkaSkeleton"/>
+		<member name="animations" type="ref" array="true" class="hkaAnimation"/>
+		<member name="bindings" type="ref" array="true" class="hkaAnimationBinding"/>
+		<member name="attachments" type="ref" array="true" class="hkaBoneAttachment"/>
+		<member name="skins" type="ref" array="true" class="hkaMeshBinding"/>
+	</class>
+	<class name="hkaSkeleton" version="3" parent="hkReferencedObject">
+		<member name="name" type="string"/>
+		<member name="parentIndices" type="int" array="true"/>
+		<member name="bones" type="struct" array="true" class="hkaBone"/>
+		<member name="referencePose" type="vec12" array="true"/>
+		<member name="referenceFloats" type="real" array="true"/>
+		<member name="floatSlots" type="string" array="true"/>
+		<member name="localFrames" type="struct" array="true" class="hkaSkeletonLocalFrameOnBone"/>
+	</class>
+	<class name="hkaBone" version="0">
+		<member name="name" type="string"/>
+		<member name="lockTranslation" type="byte"/>
+	</class>
+	<class name="hkaSkeletonLocalFrameOnBone" version="0">
+		<member name="localFrame" type="ref" class="hkLocalFrame"/>
+		<member name="boneIndex" type="int"/>
+	</class>
+	<class name="hkLocalFrame" version="0" parent="hkReferencedObject">
+	</class>
+	<class name="hkaAnimation" version="1" parent="hkReferencedObject">
+		<member name="type" type="int"/>
+		<member name="duration" type="real"/>
+		<member name="numberOfTransformTracks" type="int"/>
+		<member name="numberOfFloatTracks" type="int"/>
+		<member name="extractedMotion" type="ref" class="hkaAnimatedReferenceFrame"/>
+		<member name="annotationTracks" type="ref" array="true" class="hkaAnnotationTrack"/>
+	</class>
+	<class name="hkaAnimatedReferenceFrame" version="0" parent="hkReferencedObject">
+	</class>
+	<class name="hkaAnnotationTrack" version="0">
+		<member name="trackName" type="string"/>
+		<member name="annotations" type="struct" array="true" class="hkaAnnotationTrackAnnotation"/>
+	</class>
+	<class name="hkaAnnotationTrackAnnotation" version="0">
+		<member name="time" type="real"/>
+		<member name="text" type="string"/>
+	</class>
+	<class name="hkaAnimationBinding" version="1" parent="hkReferencedObject">
+		<member name="originalSkeletonName" type="string"/>
+		<member name="animation" type="ref" class="hkaAnimation"/>
+		<member name="transformTrackToBoneIndices" type="int" array="true"/>
+		<member name="floatTrackToFloatSlotIndices" type="int" array="true"/>
+		<member name="blendHint" type="int"/>
+	</class>
+	<class name="hkaBoneAttachment" version="1" parent="hkReferencedObject">
+		<member name="originalSkeletonName" type="string"/>
+		<member name="boneFromAttachment" type="vec16"/>
+		<member name="attachment" type="ref" class="hkReferencedObject"/>
+		<member name="name" type="string"/>
+		<member name="boneIndex" type="int"/>
+	</class>
+	<class name="hkaMeshBinding" version="1" parent="hkReferencedObject">
+		<member name="mesh" type="ref" class="hkxMesh"/>
+		<member name="originalSkeletonName" type="string"/>
+		<member name="skeleton" type="ref" class="hkaSkeleton"/>
+		<member name="mappings" type="ref" array="true" class="hkaMeshBindingMapping"/>
+		<member name="boneFromSkinMeshTransforms" type="vec16" array="true"/>
+	</class>
+	<class name="hkxMesh" version="1" parent="hkReferencedObject">
+		<member name="sections" type="ref" array="true" class="hkxMeshSection"/>
+		<member name="userChannelInfos" type="ref" array="true" class="hkxMeshUserChannelInfo"/>
+	</class>
+	<class name="hkxMeshSection" version="1" parent="hkReferencedObject">
+		<member name="vertexBuffer" type="ref" class="hkxVertexBuffer"/>
+		<member name="indexBuffers" type="ref" array="true" class="hkxIndexBuffer"/>
+		<member name="material" type="ref" class="hkxMaterial"/>
+		<member name="userChannels" type="ref" array="true" class="hkReferencedObject"/>
+	</class>
+	<class name="hkxVertexBuffer" version="1" parent="hkReferencedObject">
+		<member name="data" type="struct" class="hkxVertexBufferVertexData"/>
+		<member name="desc" type="struct" class="hkxVertexDescription"/>
+	</class>
+	<class name="hkxVertexBufferVertexData" version="0">
+		<member name="vectorData" type="vec4" array="true"/>
+		<member name="floatData" type="real" array="true"/>
+		<member name="uint32Data" type="int" array="true"/>
+		<member name="uint16Data" type="int" array="true"/>
+		<member name="uint8Data" type="byte" array="true"/>
+		<member name="numVerts" type="int"/>
+		<member name="vectorStride" type="int"/>
+		<member name="floatStride" type="int"/>
+		<member name="uint32Stride" type="int"/>
+		<member name="uint16Stride" type="int"/>
+		<member name="uint8Stride" type="int"/>
+	</class>
+	<class name="hkxVertexDescription" version="1">
+		<member name="decls" type="struct" array="true" class="hkxVertexDescriptionElementDecl"/>
+	</class>
+	<class name="hkxVertexDescriptionElementDecl" version="2">
+		<member name="byteOffset" type="int"/>
+		<member name="type" type="int"/>
+		<member name="usage" type="int"/>
+		<member name="byteStride" type="int"/>
+		<member name="numElements" type="byte"/>
+	</class>
+	<class name="hkxIndexBuffer" version="1" parent="hkReferencedObject">
+		<member name="indexType" type="int"/>
+		<member name="indices16" type="int" array="true"/>
+		<member name="indices32" type="int" array="true"/>
+		<member name="vertexBaseOffset" type="int"/>
+		<member name="length" type="int"/>
+	</class>
+	<class name="hkxAttributeHolder" version="1" parent="hkReferencedObject">
+		<member name="attributeGroups" type="ref" array="true" class="hkxAttributeGroup"/>
+	</class>
+	<class name="hkxAttributeGroup" version="0">
+		<member name="name" type="string"/>
+		<member name="attributes" type="struct" array="true" class="hkxAttribute"/>
+	</class>
+	<class name="hkxAttribute" version="0">
+		<member name="name" type="string"/>
+		<member name="value" type="ref" class="hkReferencedObject"/>
+	</class>
+	<class name="hkxMaterial" version="1" parent="hkxAttributeHolder">
+		<member name="name" type="string"/>
+		<member name="stages" type="struct" array="true" class="hkxMaterialTextureStage"/>
+		<member name="diffuseColor" type="vec4"/>
+		<member name="ambientColor" type="vec4"/>
+		<member name="specularColor" type="vec4"/>
+		<member name="emissiveColor" type="vec4"/>
+		<member name="subMaterials" type="ref" array="true" class="hkxMaterial"/>
+		<member name="extraData" type="ref" class="hkReferencedObject"/>
+		<member name="properties" type="struct" array="true" class="hkxMaterialProperty"/>
+	</class>
+	<class name="hkxMaterialTextureStage" version="0">
+		<member name="texture" type="ref" class="hkReferencedObject"/>
+		<member name="usageHint" type="int"/>
+		<member name="tcoordChannel" type="int"/>
+	</class>
+	<class name="hkxMaterialProperty" version="0">
+		<member name="key" type="int"/>
+		<member name="value" type="int"/>
+	</class>
+	<class name="hkxMeshUserChannelInfo" version="0" parent="hkxAttributeHolder">
+		<member name="name" type="string"/>
+		<member name="className" type="string"/>
+	</class>
+	<class name="hkaMeshBindingMapping" version="0">
+		<member name="mapping" type="int" array="true"/>
+	</class>
+	<class name="hkaSplineCompressedAnimation" version="0" parent="hkaAnimation">
+		<member name="numFrames" type="int"/>
+		<member name="numBlocks" type="int"/>
+		<member name="maxFramesPerBlock" type="int"/>
+		<member name="maskAndQuantizationSize" type="int"/>
+		<member name="blockDuration" type="real"/>
+		<member name="blockInverseDuration" type="real"/>
+		<member name="frameDuration" type="real"/>
+		<member name="blockOffsets" type="int" array="true"/>
+		<member name="floatBlockOffsets" type="int" array="true"/>
+		<member name="transformOffsets" type="int" array="true"/>
+		<member name="floatOffsets" type="int" array="true"/>
+		<member name="data" type="byte" array="true"/>
+		<member name="endian" type="int"/>
+	</class>
+	<class name="hkaDefaultAnimatedReferenceFrame" version="0" parent="hkaAnimatedReferenceFrame">
+		<member name="up" type="vec4"/>
+		<member name="forward" type="vec4"/>
+		<member name="duration" type="real"/>
+		<member name="referenceFrameSamples" type="vec4" array="true"/>
+	</class>
+	<class name="hkaCompressedAnimatedReferenceFrame" version="0" parent="hkaAnimatedReferenceFrame">
+		<member name="up" type="vec4"/>
+		<member name="forward" type="vec4"/>
+		<member name="duration" type="real"/>
+		<member name="compressedReferenceFrameData" type="int" array="true"/>
+		<member name="minimums" type="real" count="4"/>
+		<member name="spans" type="real" count="4"/>
+		<member name="sizes" type="int" count="4"/>
+		<member name="offsets" type="int" count="4"/>
+	</class>
+	<class name="hkbBindable" version="0" parent="hkReferencedObject">
+		<member name="variableBindingSet" type="ref" class="hkbVariableBindingSet"/>
+		<member name="cachedBindables" type="void" array="true"/>
+		<member name="areBindablesCached" type="byte"/>
+	</class>
+	<class name="hkbVariableBindingSet" version="2" parent="hkReferencedObject">
+		<member name="bindings" type="struct" array="true" class="hkbVariableBindingSetBinding"/>
+		<member name="indexOfBindingToEnable" type="int"/>
+		<member name="hasOutputBinding" type="byte"/>
+	</class>
+	<class name="hkbVariableBindingSetBinding" version="1">
+		<member name="memberPath" type="string"/>
+		<member name="memberClass" type="ref"/>
+		<member name="offsetInObjectPlusOne" type="int"/>
+		<member name="offsetInArrayPlusOne" type="int"/>
+		<member name="rootVariableIndex" type="int"/>
+		<member name="variableIndex" type="int"/>
+		<member name="bitIndex" type="int"/>
+		<member name="bindingType" type="int"/>
+		<member name="memberType" type="byte"/>
+		<member name="variableType" type="int"/>
+		<member name="flags" type="int"/>
+	</class>
+	<class name="hkbNode" version="1" parent="hkbBindable">
+		<member name="userData" type="int"/>
+		<member name="name" type="string"/>
+		<member name="id" type="int"/>
+		<member name="cloneState" type="int"/>
+		<member name="padNode" type="byte" count="1"/>
+	</class>
+	<class name="hkbGenerator" version="0" parent="hkbNode">
+	</class>
+	<class name="hkbBehaviorGraph" version="1" parent="hkbGenerator">
+		<member name="variableMode" type="int"/>
+		<member name="uniqueIdPool" type="void" array="true"/>
+		<member name="idToStateMachineTemplateMap" type="ref"/>
+		<member name="mirroredExternalIdMap" type="void" array="true"/>
+		<member name="pseudoRandomGenerator" type="ref"/>
+		<member name="rootGenerator" type="ref" class="hkbGenerator"/>
+		<member name="data" type="ref" class="hkbBehaviorGraphData"/>
+		<member name="rootGeneratorClone" type="ref"/>
+		<member name="activeNodes" type="ref"/>
+		<member name="activeNodeTemplateToIndexMap" type="ref"/>
+		<member name="activeNodesChildrenIndices" type="ref"/>
+		<member name="globalTransitionData" type="ref"/>
+		<member name="eventIdMap" type="ref"/>
+		<member name="attributeIdMap" type="ref"/>
+		<member name="variableIdMap" type="ref"/>
+		<member name="characterPropertyIdMap" type="ref"/>
+		<member name="variableValueSet" type="ref"/>
+		<member name="nodeTemplateToCloneMap" type="ref"/>
+		<member name="nodeCloneToTemplateMap" type="ref"/>
+		<member name="stateListenerTemplateToCloneMap" type="ref"/>
+		<member name="nodePartitionInfo" type="ref"/>
+		<member name="numIntermediateOutputs" type="int"/>
+		<member name="jobs" type="ref" array="true"/>
+		<member name="allPartitionMemory" type="ref" array="true"/>
+		<member name="numStaticNodes" type="int"/>
+		<member name="nextUniqueId" type="int"/>
+		<member name="isActive" type="byte"/>
+		<member name="globalBranchData" type="ref"/>
+		<member name="isLinked" type="byte"/>
+		<member name="updateActiveNodes" type="byte"/>
+		<member name="runtimeTransitions" type="ref" array="true"/>
+		<member name="stateOrTransitionChanged" type="byte"/>
+	</class>
+	<class name="hkbBehaviorGraphData" version="2" parent="hkReferencedObject">
+		<member name="attributeDefaults" type="real" array="true"/>
+		<member name="variableInfos" type="struct" array="true" class="hkbVariableInfo"/>
+		<member name="characterPropertyInfos" type="struct" array="true" class="hkbVariableInfo"/>
+		<member name="eventInfos" type="struct" array="true" class="hkbEventInfo"/>
+		<member name="wordMinVariableValues" type="struct" array="true" class="hkbVariableValue"/>
+		<member name="wordMaxVariableValues" type="struct" array="true" class="hkbVariableValue"/>
+		<member name="variableInitialValues" type="ref" class="hkbVariableValueSet"/>
+		<member name="stringData" type="ref" class="hkbBehaviorGraphStringData"/>
+	</class>
+	<class name="hkbVariableInfo" version="1">
+		<member name="role" type="struct" class="hkbRoleAttribute"/>
+		<member name="type" type="int"/>
+	</class>
+	<class name="hkbRoleAttribute" version="0">
+		<member name="role" type="int"/>
+		<member name="flags" type="int"/>
+	</class>
+	<class name="hkbEventInfo" version="0">
+		<member name="flags" type="int"/>
+	</class>
+	<class name="hkbVariableValue" version="0">
+		<member name="value" type="int"/>
+	</class>
+	<class name="hkbVariableValueSet" version="0" parent="hkReferencedObject">
+		<member name="wordVariableValues" type="struct" array="true" class="hkbVariableValue"/>
+		<member name="quadVariableValues" type="vec4" array="true"/>
+		<member name="variantVariableValues" type="ref" array="true" class="hkReferencedObject"/>
+	</class>
+	<class name="hkbBehaviorGraphStringData" version="1" parent="hkReferencedObject">
+		<member name="eventNames" type="string" array="true"/>
+		<member name="attributeNames" type="string" array="true"/>
+		<member name="variableNames" type="string" array="true"/>
+		<member name="characterPropertyNames" type="string" array="true"/>
+	</class>
+	<class name="hkbStateMachine" version="4" parent="hkbGenerator">
+		<member name="eventToSendWhenStateOrTransitionChanges" type="struct" class="hkbEvent"/>
+		<member name="startStateChooser" type="ref" class="hkbStateChooser"/>
+		<member name="startStateId" type="int"/>
+		<member name="returnToPreviousStateEventId" type="int"/>
+		<member name="randomTransitionEventId" type="int"/>
+		<member name="transitionToNextHigherStateEventId" type="int"/>
+		<member name="transitionToNextLowerStateEventId" type="int"/>
+		<member name="syncVariableIndex" type="int"/>
+		<member name="currentStateId" type="int"/>
+		<member name="wrapAroundStateId" type="byte"/>
+		<member name="maxSimultaneousTransitions" type="int"/>
+		<member name="startStateMode" type="int"/>
+		<member name="selfTransitionMode" type="int"/>
+		<member name="isActive" type="byte"/>
+		<member name="states" type="ref" array="true" class="hkbStateMachineStateInfo"/>
+		<member name="wildcardTransitions" type="ref" class="hkbStateMachineTransitionInfoArray"/>
+		<member name="stateIdToIndexMap" type="ref"/>
+		<member name="activeTransitions" type="void" array="true"/>
+		<member name="transitionFlags" type="void" array="true"/>
+		<member name="wildcardTransitionFlags" type="void" array="true"/>
+		<member name="delayedTransitions" type="void" array="true"/>
+		<member name="timeInState" type="real"/>
+		<member name="lastLocalTime" type="real"/>
+		<member name="previousStateId" type="int"/>
+		<member name="nextStartStateIndexOverride" type="int"/>
+		<member name="stateOrTransitionChanged" type="byte"/>
+		<member name="echoNextUpdate" type="byte"/>
+		<member name="echoTransitionEffect" type="ref"/>
+		<member name="echoStartStateId" type="int"/>
+		<member name="transitions" type="void" array="true"/>
+	</class>
+	<class name="hkbEventBase" version="0">
+		<member name="id" type="int"/>
+		<member name="payload" type="ref" class="hkbEventPayload"/>
+	</class>
+	<class name="hkbEventPayload" version="0" parent="hkReferencedObject">
+	</class>
+	<class name="hkbEvent" version="1" parent="hkbEventBase">
+		<member name="sender" type="ref"/>
+	</class>
+	<class name="hkbStateChooser" version="0" parent="hkReferencedObject">
+	</class>
+	<class name="hkbStateMachineStateInfo" version="7" parent="hkbBindable">
+		<member name="listeners" type="ref" array="true" class="hkbStateListener"/>
+		<member name="enterNotifyEvents" type="ref" class="hkbStateMachineEventPropertyArray"/>
+		<member name="exitNotifyEvents" type="ref" class="hkbStateMachineEventPropertyArray"/>
+		<member name="transitions" type="ref" class="hkbStateMachineTransitionInfoArray"/>
+		<member name="generator" type="ref" class="hkbGenerator"/>
+		<member name="name" type="string"/>
+		<member name="stateId" type="int"/>
+		<member name="probability" type="real"/>
+		<member name="enable" type="byte"/>
+		<member name="isConduit" type="byte"/>
+		<member name="interactionPort" type="int"/>
+		<member name="interactionResponse" type="ref" class="hkbInteractionPayload"/>
+		<member name="interactionHandleIndex" type="int"/>
+		<member name="eventTransitionMap" type="ref"/>
+		<member name="nestedNode" type="ref" array="true"/>
+		<member name="conduitStatusDirty" type="byte"/>
+	</class>
+	<class name="hkbStateListener" version="0" parent="hkReferencedObject">
+	</class>
+	<class name="hkbStateMachineEventPropertyArray" version="0" parent="hkReferencedObject">
+		<member name="events" type="struct" array="true" class="hkbEventProperty"/>
+	</class>
+	<class name="hkbEventProperty" version="1" parent="hkbEventBase">
+	</class>
+	<class name="hkbStateMachineTransitionInfoArray" version="0" parent="hkReferencedObject">
+		<member name="transitions" type="struct" array="true" class="hkbStateMachineTransitionInfo"/>
+	</class>
+	<class name="hkbStateMachineTransitionInfo" version="2">
+		<member name="transition" type="ref" class="hkbTransitionEffect"/>
+		<member name="condition" type="ref" class="hkbCondition"/>
+		<member name="eventId" type="int"/>
+		<member name="toStateId" type="int"/>
+		<member name="fromNestedStateId" type="int"/>
+		<member name="toNestedStateId" type="int"/>
+		<member name="priority" type="int"/>
+		<member name="branchId" type="int"/>
+		<member name="flags" type="int"/>
+		<member name="behavior" type="ref"/>
+		<member name="stateMachineTemplate" type="ref"/>
+		<member name="startStateIdx" type="int"/>
+		<member name="enableBinding" type="int"/>
+	</class>
+	<class name="hkbTransitionEffect" version="1" parent="hkbGenerator">
+		<member name="selfTransitionMode" type="int"/>
+		<member name="eventMode" type="int"/>
+		<member name="branchInId" type="int"/>
+		<member name="syncBranchId" type="int"/>
+		<member name="invertSyncFraction" type="byte"/>
+		<member name="defaultEventMode" type="int"/>
+		<member name="interactionPortFraction" type="real"/>
+		<member name="templatePtr" type="ref"/>
+	</class>
+	<class name="hkbCondition" version="0" parent="hkReferencedObject">
+	</class>
+	<class name="hkbInteractionPayload" version="0" parent="hkReferencedObject">
+		<member name="fraction" type="real"/>
+	</class>
+	<class name="hkbModifierGenerator" version="0" parent="hkbGenerator">
+		<member name="modifier" type="ref" class="hkbModifier"/>
+		<member name="generator" type="ref" class="hkbGenerator"/>
+	</class>
+	<class name="hkbModifier" version="0" parent="hkbNode">
+		<member name="enable" type="byte"/>
+		<member name="padModifier" type="byte" count="3"/>
+	</class>
+	<class name="hkbTwistModifier" version="1" parent="hkbModifier">
+		<member name="axisOfRotation" type="vec4"/>
+		<member name="twistAngle" type="real"/>
+		<member name="startBoneIndex" type="int"/>
+		<member name="endBoneIndex" type="int"/>
+		<member name="setAngleMethod" type="int"/>
+		<member name="rotationAxisCoordinates" type="int"/>
+		<member name="isAdditive" type="byte"/>
+		<member name="boneChainIndices" type="void" array="true"/>
+		<member name="parentBoneIndices" type="void" array="true"/>
+	</class>
+	<class name="hkbSequencerGenerator" version="0" parent="hkbGenerator">
+		<member name="tags" type="ref" array="true" class="hkbSequenceTag"/>
+		<member name="generator" type="ref" class="hkbGenerator"/>
+		<member name="childClipGenerator" type="ref"/>
+	</class>
+	<class name="hkbSequenceTag" version="0" parent="hkbBindable">
+		<member name="bufferFraction" type="real"/>
+		<member name="openFraction" type="real"/>
+		<member name="closedFraction" type="real"/>
+		<member name="phase" type="int"/>
+		<member name="lastTimeFraction" type="real"/>
+		<member name="startEchoNextFrame" type="byte"/>
+		<member name="resetLastTimeFraction" type="byte"/>
+	</class>
+	<class name="hkbBranchSequenceTag" version="0" parent="hkbSequenceTag">
+		<member name="branchId" type="int"/>
+	</class>
+	<class name="hkbEventSequenceTag" version="0" parent="hkbSequenceTag">
+		<member name="event" type="struct" class="hkbEventProperty"/>
+	</class>
+	<class name="hkbStringEventPayload" version="0" parent="hkbEventPayload">
+		<member name="data" type="string"/>
+	</class>
+	<class name="hkbActionSequenceTag" version="0" parent="hkbSequenceTag">
+		<member name="actionName" type="string"/>
+		<member name="contextName" type="string"/>
+		<member name="lastPhase" type="int"/>
+	</class>
+	<class name="hkbClipGenerator" version="2" parent="hkbGenerator">
+		<member name="animationName" type="string"/>
+		<member name="triggers" type="ref" class="hkbClipTriggerArray"/>
+		<member name="cropStartAmountLocalTime" type="real"/>
+		<member name="cropEndAmountLocalTime" type="real"/>
+		<member name="startTime" type="real"/>
+		<member name="playbackSpeed" type="real"/>
+		<member name="enforcedDuration" type="real"/>
+		<member name="userControlledTimeFraction" type="real"/>
+		<member name="animationBindingIndex" type="int"/>
+		<member name="mode" type="int"/>
+		<member name="flags" type="int"/>
+		<member name="animationBindingBucket" type="int"/>
+		<member name="animDatas" type="void" array="true"/>
+		<member name="animationControl" type="ref"/>
+		<member name="originalTriggers" type="ref"/>
+		<member name="mapperData" type="ref"/>
+		<member name="binding" type="ref"/>
+		<member name="mirroredAnimation" type="ref"/>
+		<member name="extractedMotion" type="vec12"/>
+		<member name="echos" type="void" array="true"/>
+		<member name="localTime" type="real"/>
+		<member name="time" type="real"/>
+		<member name="previousUserControlledTimeFraction" type="real"/>
+		<member name="bufferSize" type="int"/>
+		<member name="echoBufferSize" type="int"/>
+		<member name="atEnd" type="byte"/>
+		<member name="ignoreStartTime" type="byte"/>
+		<member name="pingPongBackward" type="byte"/>
+	</class>
+	<class name="hkbClipTriggerArray" version="0" parent="hkReferencedObject">
+		<member name="triggers" type="struct" array="true" class="hkbClipTrigger"/>
+	</class>
+	<class name="hkbClipTrigger" version="1">
+		<member name="localTime" type="real"/>
+		<member name="event" type="struct" class="hkbEventProperty"/>
+		<member name="relativeToEndOfClip" type="byte"/>
+		<member name="acyclic" type="byte"/>
+		<member name="isAnnotation" type="byte"/>
+	</class>
+	<class name="hkbBlendingTransitionEffect" version="1" parent="hkbTransitionEffect">
+		<member name="duration" type="real"/>
+		<member name="toGeneratorStartTimeFraction" type="real"/>
+		<member name="flags" type="int"/>
+		<member name="endMode" type="int"/>
+		<member name="blendCurve" type="int"/>
+		<member name="fromGenerator" type="ref"/>
+		<member name="toGenerator" type="ref"/>
+		<member name="characterPoseAtBeginningOfTransition" type="void" array="true"/>
+		<member name="timeRemaining" type="real"/>
+		<member name="timeInTransition" type="real"/>
+		<member name="applySelfTransition" type="byte"/>
+		<member name="initializeCharacterPose" type="byte"/>
+	</class>
+	<class name="hkbNegateCondition" version="0" parent="hkbCondition">
+		<member name="condition" type="ref" class="hkbCondition"/>
+	</class>
+	<class name="hkbThresholdCondition" version="0" parent="hkbCondition">
+		<member name="minRange" type="real"/>
+		<member name="maxRange" type="real"/>
+		<member name="exclusive" type="byte"/>
+		<member name="invert" type="byte"/>
+		<member name="inputValue" type="int"/>
+	</class>
+	<class name="hkbReferencePoseGenerator" version="0" parent="hkbGenerator">
+		<member name="skeleton" type="ref"/>
+	</class>
+	<class name="hkbBoolCondition" version="0" parent="hkbCondition">
+		<member name="trueBooleans" type="struct" array="true" class="hkbBoolConditionBooleanValue"/>
+		<member name="falseBooleans" type="struct" array="true" class="hkbBoolConditionBooleanValue"/>
+	</class>
+	<class name="hkbBoolConditionBooleanValue" version="0">
+		<member name="boolVariableIndex" type="int"/>
+	</class>
+	<class name="hkbModifierSequenceTag" version="0" parent="hkbSequenceTag">
+		<member name="modifier" type="ref" class="hkbModifier"/>
+		<member name="lastPhase" type="int"/>
+	</class>
+	<class name="hkbAlignCharacterModifier" version="0" parent="hkbModifier">
+		<member name="alignMode" type="int"/>
+		<member name="alignVector" type="vec4"/>
+		<member name="angleOffset" type="real"/>
+		<member name="maxRotation" type="real"/>
+		<member name="clampRotationAngle" type="byte"/>
+		<member name="lastTimeStep" type="real"/>
+	</class>
+	<class name="hkbNamedEventPayload" version="0" parent="hkbEventPayload">
+		<member name="name" type="string"/>
+	</class>
+	<class name="hkbNamedStringEventPayload" version="0" parent="hkbNamedEventPayload">
+		<member name="data" type="string"/>
+	</class>
+	<class name="hkbMultiCondition" version="0" parent="hkbCondition">
+		<member name="trueIfAny" type="byte"/>
+		<member name="conditions" type="ref" array="true" class="hkbCondition"/>
+	</class>
+	<class name="hkbModifierList" version="0" parent="hkbModifier">
+		<member name="modifiers" type="ref" array="true" class="hkbModifier"/>
+	</class>
+	<class name="hkbAccelDecelModifier" version="0" parent="hkbModifier">
+		<member name="inputValue" type="real"/>
+		<member name="outputValue" type="real"/>
+		<member name="maxAccel" type="real"/>
+		<member name="maxDecel" type="real"/>
+		<member name="lastFrameValue" type="real"/>
+		<member name="lastTimeStep" type="real"/>
+	</class>
+	<class name="hkbEntityPropertySequenceTag" version="0" parent="hkbSequenceTag">
+		<member name="property" type="ref" class="hkbEntityPropertyControlData"/>
+	</class>
+	<class name="hkbEntityPropertyControlData" version="0" parent="hkbBindable">
+	</class>
+	<class name="hkbEntityPropertyCollisionModeData" version="0" parent="hkbEntityPropertyControlData">
+		<member name="collisionMode" type="int"/>
+	</class>
+	<class name="hkbBlenderGenerator" version="2" parent="hkbGenerator">
+		<member name="referencePoseWeightThreshold" type="real"/>
+		<member name="blendParameter" type="real"/>
+		<member name="minCyclicBlendParameter" type="real"/>
+		<member name="maxCyclicBlendParameter" type="real"/>
+		<member name="indexOfSyncMasterChild" type="int"/>
+		<member name="flags" type="int"/>
+		<member name="subtractLastChild" type="byte"/>
+		<member name="children" type="ref" array="true" class="hkbBlenderGeneratorChild"/>
+		<member name="tagTrackIndex" type="int"/>
+		<member name="childrenInternalStates" type="void" array="true"/>
+		<member name="sortedChildren" type="void" array="true"/>
+		<member name="endIntervalWeight" type="real"/>
+		<member name="numActiveChildren" type="int"/>
+		<member name="beginIntervalIndex" type="int"/>
+		<member name="endIntervalIndex" type="int"/>
+		<member name="initSync" type="byte"/>
+		<member name="doSubtractiveBlend" type="byte"/>
+	</class>
+	<class name="hkbBlenderGeneratorChild" version="2" parent="hkbBindable">
+		<member name="generator" type="ref" class="hkbGenerator"/>
+		<member name="boneWeights" type="ref" class="hkbBoneWeightArray"/>
+		<member name="weight" type="real"/>
+		<member name="worldFromModelWeight" type="real"/>
+	</class>
+	<class name="hkbBoneWeightArray" version="0" parent="hkbBindable">
+		<member name="boneWeights" type="real" array="true"/>
+	</class>
+	<class name="hkbAbilityModifier" version="1" parent="hkbModifier">
+		<member name="abilityKey" type="string"/>
+		<member name="wargearSource" type="int"/>
+		<member name="test" type="int"/>
+	</class>
+	<class name="hkbSetFloatModifier" version="0" parent="hkbModifier">
+		<member name="variableIndex" type="int"/>
+		<member name="value" type="real"/>
+		<member name="resetOnDeactivate" type="byte"/>
+	</class>
+	<class name="hkbAttackAlignmentSequenceTag" version="0" parent="hkbSequenceTag">
+		<member name="targetHandle" type="ref" class="hkbHandle"/>
+		<member name="defaultDirection" type="vec4"/>
+		<member name="defaultDirectionAlignment" type="int"/>
+		<member name="isDefaultSteerable" type="byte"/>
+		<member name="clampRotation" type="byte"/>
+		<member name="maxRotation" type="real"/>
+		<member name="offsetRotation" type="real"/>
+		<member name="useOffsetWithValidTarget" type="byte"/>
+		<member name="targetDirection" type="vec4"/>
+		<member name="lastPhase" type="int"/>
+		<member name="lastTimeStep" type="real"/>
+		<member name="cachedDirection" type="vec4"/>
+		<member name="blendFraction" type="real"/>
+	</class>
+	<class name="hkbHandle" version="1" parent="hkReferencedObject">
+		<member name="frame" type="ref" class="hkLocalFrame"/>
+		<member name="rigidBody" type="ref" class="hkpRigidBody"/>
+		<member name="animationBoneIndex" type="int"/>
+		<member name="character" type="ref" class="hkbCharacter"/>
+	</class>
+	<class name="hkpWorldObject" version="0" parent="hkReferencedObject">
+		<member name="world" type="ref"/>
+		<member name="userData" type="int"/>
+		<member name="collidable" type="struct" class="hkpLinkedCollidable"/>
+		<member name="multiThreadCheck" type="struct" class="hkMultiThreadCheck"/>
+		<member name="name" type="string"/>
+		<member name="properties" type="struct" array="true" class="hkpProperty"/>
+		<member name="treeData" type="ref"/>
+	</class>
+	<class name="hkpCdBody" version="1">
+		<member name="shape" type="ref" class="hkpShape"/>
+		<member name="shapeKey" type="int"/>
+		<member name="motion" type="ref"/>
+		<member name="parent" type="ref" class="hkpCdBody"/>
+	</class>
+	<class name="hkpShape" version="0" parent="hkReferencedObject">
+		<member name="userData" type="int"/>
+		<member name="type" type="int"/>
+	</class>
+	<class name="hkpCollidable" version="0" parent="hkpCdBody">
+		<member name="ownerOffset" type="int"/>
+		<member name="forceCollideOntoPpu" type="byte"/>
+		<member name="shapeSizeOnSpu" type="int"/>
+		<member name="broadPhaseHandle" type="struct" class="hkpTypedBroadPhaseHandle"/>
+		<member name="boundingVolumeData" type="struct" class="hkpCollidableBoundingVolumeData"/>
+		<member name="allowedPenetrationDepth" type="real"/>
+	</class>
+	<class name="hkpBroadPhaseHandle" version="0">
+		<member name="id" type="int"/>
+	</class>
+	<class name="hkpTypedBroadPhaseHandle" version="0" parent="hkpBroadPhaseHandle">
+		<member name="type" type="int"/>
+		<member name="ownerOffset" type="int"/>
+		<member name="objectQualityType" type="int"/>
+		<member name="collisionFilterInfo" type="int"/>
+	</class>
+	<class name="hkpCollidableBoundingVolumeData" version="0">
+		<member name="min" type="int" count="3"/>
+		<member name="expansionMin" type="byte" count="3"/>
+		<member name="expansionShift" type="byte"/>
+		<member name="max" type="int" count="3"/>
+		<member name="expansionMax" type="byte" count="3"/>
+		<member name="padding" type="byte"/>
+		<member name="numChildShapeAabbs" type="int"/>
+		<member name="capacityChildShapeAabbs" type="int"/>
+		<member name="childShapeAabbs" type="ref"/>
+		<member name="childShapeKeys" type="ref"/>
+	</class>
+	<class name="hkpLinkedCollidable" version="0" parent="hkpCollidable">
+		<member name="collisionEntries" type="void" array="true"/>
+	</class>
+	<class name="hkMultiThreadCheck" version="0">
+		<member name="threadId" type="int"/>
+		<member name="stackTraceId" type="int"/>
+		<member name="markCount" type="int"/>
+		<member name="markBitStack" type="int"/>
+	</class>
+	<class name="hkpProperty" version="0">
+		<member name="key" type="int"/>
+		<member name="alignmentPadding" type="int"/>
+		<member name="value" type="struct" class="hkpPropertyValue"/>
+	</class>
+	<class name="hkpPropertyValue" version="0">
+		<member name="data" type="int"/>
+	</class>
+	<class name="hkpEntity" version="3" parent="hkpWorldObject">
+		<member name="material" type="struct" class="hkpMaterial"/>
+		<member name="limitContactImpulseUtilAndFlag" type="ref"/>
+		<member name="damageMultiplier" type="real"/>
+		<member name="breakableBody" type="ref"/>
+		<member name="solverData" type="int"/>
+		<member name="storageIndex" type="int"/>
+		<member name="contactPointCallbackDelay" type="int"/>
+		<member name="constraintsMaster" type="struct" class="hkpEntitySmallArraySerializeOverrideType"/>
+		<member name="constraintsSlave" type="ref" array="true" class="hkpConstraintInstance"/>
+		<member name="constraintRuntime" type="byte" array="true"/>
+		<member name="simulationIsland" type="ref"/>
+		<member name="autoRemoveLevel" type="int"/>
+		<member name="numShapeKeysInContactPointProperties" type="byte"/>
+		<member name="responseModifierFlags" type="byte"/>
+		<member name="uid" type="int"/>
+		<member name="spuCollisionCallback" type="struct" class="hkpEntitySpuCollisionCallback"/>
+		<member name="motion" type="struct" class="hkpMotion"/>
+		<member name="contactListeners" type="struct" class="hkpEntitySmallArraySerializeOverrideType"/>
+		<member name="actions" type="struct" class="hkpEntitySmallArraySerializeOverrideType"/>
+		<member name="localFrame" type="ref" class="hkLocalFrame"/>
+		<member name="extendedListeners" type="ref" class="hkpEntityExtendedListeners"/>
+		<member name="npData" type="int"/>
+	</class>
+	<class name="hkpMaterial" version="2">
+		<member name="responseType" type="int"/>
+		<member name="rollingFrictionMultiplier" type="real"/>
+		<member name="friction" type="real"/>
+		<member name="restitution" type="real"/>
+	</class>
+	<class name="hkpEntitySmallArraySerializeOverrideType" version="1">
+		<member name="data" type="ref"/>
+		<member name="size" type="int"/>
+		<member name="capacityAndFlags" type="int"/>
+	</class>
+	<class name="hkpConstraintInstance" version="1" parent="hkReferencedObject">
+		<member name="owner" type="ref"/>
+		<member name="data" type="ref" class="hkpConstraintData"/>
+		<member name="constraintModifiers" type="ref" class="hkpModifierConstraintAtom"/>
+		<member name="entities" type="ref" count="2" class="hkpEntity"/>
+		<member name="priority" type="byte"/>
+		<member name="wantRuntime" type="byte"/>
+		<member name="destructionRemapInfo" type="byte"/>
+		<member name="listeners" type="struct" class="hkpConstraintInstanceSmallArraySerializeOverrideType"/>
+		<member name="name" type="string"/>
+		<member name="userData" type="int"/>
+		<member name="internal" type="ref"/>
+		<member name="uid" type="int"/>
+	</class>
+	<class name="hkpConstraintData" version="0" parent="hkReferencedObject">
+		<member name="userData" type="int"/>
+	</class>
+	<class name="hkpConstraintAtom" version="0">
+		<member name="type" type="int"/>
+	</class>
+	<class name="hkpModifierConstraintAtom" version="0" parent="hkpConstraintAtom">
+		<member name="modifierAtomSize" type="int"/>
+		<member name="childSize" type="int"/>
+		<member name="child" type="ref" class="hkpConstraintAtom"/>
+		<member name="pad" type="int" count="2"/>
+	</class>
+	<class name="hkpConstraintInstanceSmallArraySerializeOverrideType" version="1">
+		<member name="data" type="ref"/>
+		<member name="size" type="int"/>
+		<member name="capacityAndFlags" type="int"/>
+	</class>
+	<class name="hkpEntitySpuCollisionCallback" version="0">
+		<member name="util" type="ref"/>
+		<member name="capacity" type="int"/>
+		<member name="eventFilter" type="byte"/>
+		<member name="userFilter" type="byte"/>
+	</class>
+	<class name="hkpMotion" version="3" parent="hkReferencedObject">
+		<member name="type" type="byte"/>
+		<member name="deactivationIntegrateCounter" type="byte"/>
+		<member name="deactivationNumInactiveFrames" type="int" count="2"/>
+		<member name="motionState" type="struct" class="hkMotionState"/>
+		<member name="inertiaAndMassInv" type="vec4"/>
+		<member name="linearVelocity" type="vec4"/>
+		<member name="angularVelocity" type="vec4"/>
+		<member name="deactivationRefPosition" type="vec4" count="2"/>
+		<member name="deactivationRefOrientation" type="int" count="2"/>
+		<member name="savedMotion" type="ref" class="hkpMotion"/>
+		<member name="savedQualityTypeIndex" type="int"/>
+		<member name="gravityFactor" type="real"/>
+	</class>
+	<class name="hkMotionState" version="1">
+		<member name="transform" type="vec16"/>
+		<member name="sweptTransform" type="struct" class="hkSweptTransform"/>
+		<member name="deltaAngle" type="vec4"/>
+		<member name="objectRadius" type="real"/>
+		<member name="linearDamping" type="real"/>
+		<member name="angularDamping" type="real"/>
+		<member name="timeFactor" type="real"/>
+		<member name="maxLinearVelocity" type="byte"/>
+		<member name="maxAngularVelocity" type="byte"/>
+		<member name="deactivationClass" type="byte"/>
+	</class>
+	<class name="hkSweptTransform" version="0">
+		<member name="centerOfMass0" type="vec4"/>
+		<member name="centerOfMass1" type="vec4"/>
+		<member name="rotation0" type="vec4"/>
+		<member name="rotation1" type="vec4"/>
+		<member name="centerOfMassLocal" type="vec4"/>
+	</class>
+	<class name="hkpEntityExtendedListeners" version="0">
+		<member name="activationListeners" type="struct" class="hkpEntitySmallArraySerializeOverrideType"/>
+		<member name="entityListeners" type="struct" class="hkpEntitySmallArraySerializeOverrideType"/>
+	</class>
+	<class name="hkpRigidBody" version="0" parent="hkpEntity">
+	</class>
+	<class name="hkbCharacter" version="2" parent="hkReferencedObject">
+		<member name="nearbyCharacters" type="ref" array="true" class="hkbCharacter"/>
+		<member name="currentLod" type="int"/>
+		<member name="numTracksInLod" type="int"/>
+		<member name="name" type="string"/>
+		<member name="ragdollDriver" type="ref"/>
+		<member name="characterControllerDriver" type="ref"/>
+		<member name="footIkDriver" type="ref"/>
+		<member name="handIkDriver" type="ref"/>
+		<member name="setup" type="ref" class="hkbCharacterSetup"/>
+		<member name="behaviorGraph" type="ref" class="hkbBehaviorGraph"/>
+		<member name="projectData" type="ref" class="hkbProjectData"/>
+		<member name="animationBindingSet" type="ref"/>
+		<member name="raycastInterface" type="ref"/>
+		<member name="world" type="ref"/>
+		<member name="eventQueue" type="ref"/>
+		<member name="worldFromModel" type="ref"/>
+		<member name="poseLocal" type="void" array="true"/>
+		<member name="deleteWorldFromModel" type="byte"/>
+		<member name="deletePoseLocal" type="byte"/>
+		<member name="listeners" type="ref" array="true"/>
+		<member name="cinematicClip" type="ref"/>
+		<member name="interactionController" type="ref"/>
+		<member name="gameState" type="ref"/>
+		<member name="characterStuck" type="byte"/>
+	</class>
+	<class name="hkbCharacterSetup" version="2" parent="hkReferencedObject">
+		<member name="retargetingSkeletonMappers" type="ref" array="true" class="hkaSkeletonMapper"/>
+		<member name="animationSkeleton" type="ref" class="hkaSkeleton"/>
+		<member name="ragdollToAnimationSkeletonMapper" type="ref" class="hkaSkeletonMapper"/>
+		<member name="animationToRagdollSkeletonMapper" type="ref" class="hkaSkeletonMapper"/>
+		<member name="animationBindingSet" type="ref"/>
+		<member name="data" type="ref" class="hkbCharacterData"/>
+		<member name="mirroredSkeleton" type="ref"/>
+		<member name="characterPropertyIdMap" type="ref"/>
+	</class>
+	<class name="hkaSkeletonMapper" version="0" parent="hkReferencedObject">
+		<member name="mapping" type="struct" class="hkaSkeletonMapperData"/>
+	</class>
+	<class name="hkaSkeletonMapperData" version="1">
+		<member name="skeletonA" type="ref" class="hkaSkeleton"/>
+		<member name="skeletonB" type="ref" class="hkaSkeleton"/>
+		<member name="simpleMappings" type="struct" array="true" class="hkaSkeletonMapperDataSimpleMapping"/>
+		<member name="chainMappings" type="struct" array="true" class="hkaSkeletonMapperDataChainMapping"/>
+		<member name="unmappedBones" type="int" array="true"/>
+		<member name="extractedMotionMapping" type="vec12"/>
+		<member name="keepUnmappedLocal" type="byte"/>
+		<member name="mappingType" type="int"/>
+	</class>
+	<class name="hkaSkeletonMapperDataSimpleMapping" version="0">
+		<member name="boneA" type="int"/>
+		<member name="boneB" type="int"/>
+		<member name="aFromBTransform" type="vec12"/>
+	</class>
+	<class name="hkaSkeletonMapperDataChainMapping" version="0">
+		<member name="startBoneA" type="int"/>
+		<member name="endBoneA" type="int"/>
+		<member name="startBoneB" type="int"/>
+		<member name="endBoneB" type="int"/>
+		<member name="startAFromBTransform" type="vec12"/>
+		<member name="endAFromBTransform" type="vec12"/>
+	</class>
+	<class name="hkbCharacterData" version="7" parent="hkReferencedObject">
+		<member name="characterControllerInfo" type="struct" class="hkbCharacterDataCharacterControllerInfo"/>
+		<member name="modelUpMS" type="vec4"/>
+		<member name="modelForwardMS" type="vec4"/>
+		<member name="modelRightMS" type="vec4"/>
+		<member name="characterPropertyInfos" type="struct" array="true" class="hkbVariableInfo"/>
+		<member name="numBonesPerLod" type="int" array="true"/>
+		<member name="characterPropertyValues" type="ref" class="hkbVariableValueSet"/>
+		<member name="footIkDriverInfo" type="ref" class="hkbFootIkDriverInfo"/>
+		<member name="handIkDriverInfo" type="ref" class="hkbHandIkDriverInfo"/>
+		<member name="stringData" type="ref" class="hkbCharacterStringData"/>
+		<member name="mirroredSkeletonInfo" type="ref" class="hkbMirroredSkeletonInfo"/>
+		<member name="scale" type="real"/>
+		<member name="numHands" type="int"/>
+		<member name="numFloatSlots" type="int"/>
+	</class>
+	<class name="hkbCharacterDataCharacterControllerInfo" version="0">
+		<member name="capsuleHeight" type="real"/>
+		<member name="capsuleRadius" type="real"/>
+		<member name="collisionFilterInfo" type="int"/>
+		<member name="characterControllerCinfo" type="ref" class="hkpCharacterControllerCinfo"/>
+	</class>
+	<class name="hkpCharacterControllerCinfo" version="0" parent="hkReferencedObject">
+	</class>
+	<class name="hkbFootIkDriverInfo" version="0" parent="hkReferencedObject">
+		<member name="legs" type="struct" array="true" class="hkbFootIkDriverInfoLeg"/>
+		<member name="raycastDistanceUp" type="real"/>
+		<member name="raycastDistanceDown" type="real"/>
+		<member name="originalGroundHeightMS" type="real"/>
+		<member name="verticalOffset" type="real"/>
+		<member name="collisionFilterInfo" type="int"/>
+		<member name="forwardAlignFraction" type="real"/>
+		<member name="sidewaysAlignFraction" type="real"/>
+		<member name="sidewaysSampleWidth" type="real"/>
+		<member name="lockFeetWhenPlanted" type="byte"/>
+		<member name="useCharacterUpVector" type="byte"/>
+		<member name="isQuadrupedNarrow" type="byte"/>
+	</class>
+	<class name="hkbFootIkDriverInfoLeg" version="0">
+		<member name="kneeAxisLS" type="vec4"/>
+		<member name="footEndLS" type="vec4"/>
+		<member name="footPlantedAnkleHeightMS" type="real"/>
+		<member name="footRaisedAnkleHeightMS" type="real"/>
+		<member name="maxAnkleHeightMS" type="real"/>
+		<member name="minAnkleHeightMS" type="real"/>
+		<member name="maxKneeAngleDegrees" type="real"/>
+		<member name="minKneeAngleDegrees" type="real"/>
+		<member name="hipIndex" type="int"/>
+		<member name="kneeIndex" type="int"/>
+		<member name="ankleIndex" type="int"/>
+	</class>
+	<class name="hkbHandIkDriverInfo" version="0" parent="hkReferencedObject">
+		<member name="hands" type="struct" array="true" class="hkbHandIkDriverInfoHand"/>
+		<member name="fadeInOutCurve" type="int"/>
+	</class>
+	<class name="hkbHandIkDriverInfoHand" version="1">
+		<member name="elbowAxisLS" type="vec4"/>
+		<member name="backHandNormalLS" type="vec4"/>
+		<member name="handOffsetLS" type="vec4"/>
+		<member name="handOrienationOffsetLS" type="vec4"/>
+		<member name="maxElbowAngleDegrees" type="real"/>
+		<member name="minElbowAngleDegrees" type="real"/>
+		<member name="shoulderIndex" type="int"/>
+		<member name="shoulderSiblingIndex" type="int"/>
+		<member name="elbowIndex" type="int"/>
+		<member name="elbowSiblingIndex" type="int"/>
+		<member name="wristIndex" type="int"/>
+		<member name="enforceEndPosition" type="byte"/>
+		<member name="enforceEndRotation" type="byte"/>
+		<member name="localFrameName" type="string"/>
+	</class>
+	<class name="hkbCharacterStringData" version="5" parent="hkReferencedObject">
+		<member name="deformableSkinNames" type="string" array="true"/>
+		<member name="rigidSkinNames" type="string" array="true"/>
+		<member name="animationNames" type="string" array="true"/>
+		<member name="animationFilenames" type="string" array="true"/>
+		<member name="characterPropertyNames" type="string" array="true"/>
+		<member name="retargetingSkeletonMapperFilenames" type="string" array="true"/>
+		<member name="lodNames" type="string" array="true"/>
+		<member name="mirroredSyncPointSubstringsA" type="string" array="true"/>
+		<member name="mirroredSyncPointSubstringsB" type="string" array="true"/>
+		<member name="name" type="string"/>
+		<member name="rigName" type="string"/>
+		<member name="ragdollName" type="string"/>
+		<member name="behaviorFilename" type="string"/>
+	</class>
+	<class name="hkbMirroredSkeletonInfo" version="0" parent="hkReferencedObject">
+		<member name="mirrorAxis" type="vec4"/>
+		<member name="bonePairMap" type="int" array="true"/>
+	</class>
+	<class name="hkbProjectData" version="2" parent="hkReferencedObject">
+		<member name="worldUpWS" type="vec4"/>
+		<member name="stringData" type="ref" class="hkbProjectStringData"/>
+		<member name="defaultEventMode" type="int"/>
+	</class>
+	<class name="hkbProjectStringData" version="1" parent="hkReferencedObject">
+		<member name="animationFilenames" type="string" array="true"/>
+		<member name="behaviorFilenames" type="string" array="true"/>
+		<member name="characterFilenames" type="string" array="true"/>
+		<member name="eventNames" type="string" array="true"/>
+		<member name="animationPath" type="string"/>
+		<member name="behaviorPath" type="string"/>
+		<member name="characterPath" type="string"/>
+		<member name="fullPathToSource" type="string"/>
+		<member name="rootPath" type="string"/>
+	</class>
+	<class name="hkbInteractionSequenceTag" version="0" parent="hkbSequenceTag">
+		<member name="interactionTarget" type="ref" class="hkbHandle"/>
+		<member name="interaction" type="ref" class="hkbInteractionPayload"/>
+		<member name="successEvent" type="struct" class="hkbEventProperty"/>
+		<member name="failEvent" type="struct" class="hkbEventProperty"/>
+		<member name="setAttackerHandles" type="byte"/>
+		<member name="responseReceived" type="byte"/>
+	</class>
+	<class name="hkbInteractionRequestPayload" version="0" parent="hkbInteractionPayload">
+		<member name="interactionPort" type="int"/>
+		<member name="matchPhase" type="byte"/>
+		<member name="interactionString" type="string"/>
+	</class>
+	<class name="hkbWeaponHitPayload" version="0" parent="hkbEventPayload">
+		<member name="reactionType" type="string"/>
+	</class>
+	<class name="hkbShapePayload" version="0" parent="hkbWeaponHitPayload">
+	</class>
+	<class name="hkbWedgePayload" version="0" parent="hkbShapePayload">
+		<member name="originOffsetDistance" type="real"/>
+		<member name="depth" type="real"/>
+		<member name="minAngle" type="real"/>
+		<member name="maxAngle" type="real"/>
+	</class>
+	<class name="hkbAttackDistanceSequenceTag" version="0" parent="hkbSequenceTag">
+		<member name="targetHandle" type="ref" class="hkbHandle"/>
+		<member name="defaultDistance" type="real"/>
+		<member name="targetDistance" type="real"/>
+		<member name="lastPhase" type="int"/>
+		<member name="cachedSelfPosition" type="vec4"/>
+		<member name="branchInMultiplier" type="real"/>
+	</class>
+	<class name="hkbSetBoolModifier" version="0" parent="hkbModifier">
+		<member name="variableIndex" type="int"/>
+		<member name="value" type="byte"/>
+		<member name="resetOnDeactivate" type="byte"/>
+	</class>
+	<class name="hkbEntityPropertyControlsModifier" version="1" parent="hkbModifier">
+		<member name="controlData" type="ref" class="hkbEntityPropertyControlData"/>
+	</class>
+	<class name="hkbEntityPropertyWeaponData" version="0" parent="hkbEntityPropertyControlData">
+		<member name="meleeWeaponDeployed" type="int"/>
+		<member name="rangeWeaponDeployed" type="int"/>
+		<member name="exoticWeaponDeployed" type="int"/>
+	</class>
+	<class name="hkbCinematicGenerator" version="0" parent="hkbGenerator">
+		<member name="cinematicGenerator" type="ref"/>
+	</class>
+	<class name="hkbBehaviorReferenceGenerator" version="0" parent="hkbGenerator">
+		<member name="behaviorName" type="string"/>
+		<member name="behavior" type="ref"/>
+	</class>
+	<class name="hkbRadialAccelDecelModifier" version="0" parent="hkbModifier">
+		<member name="inputValue" type="real"/>
+		<member name="outputValue" type="real"/>
+		<member name="maxAccel" type="real"/>
+		<member name="maxDecel" type="real"/>
+		<member name="minRadial" type="real"/>
+		<member name="maxRadial" type="real"/>
+		<member name="lastFrameValue" type="real"/>
+		<member name="lastTimeStep" type="real"/>
+	</class>
+	<class name="hkbRadialVectorAccelModifier" version="0" parent="hkbModifier">
+		<member name="referenceVector" type="vec4"/>
+		<member name="targetVector" type="vec4"/>
+		<member name="inputSpeed" type="real"/>
+		<member name="normalizeTargetVector" type="byte"/>
+		<member name="outputAngle" type="real"/>
+		<member name="outputSpeed" type="real"/>
+		<member name="maxChange" type="real"/>
+		<member name="angleThreshold" type="real"/>
+		<member name="lastFrameVector" type="vec4"/>
+		<member name="lastFrameAngle" type="real"/>
+		<member name="lastTimeStep" type="real"/>
+	</class>
+	<class name="hkbNormalizedFloatModifier" version="0" parent="hkbModifier">
+		<member name="rangeMin" type="real"/>
+		<member name="rangeMax" type="real"/>
+		<member name="inputValue" type="real"/>
+		<member name="invert" type="byte"/>
+		<member name="outputValue" type="real"/>
+	</class>
+	<class name="hkbTimerModifier" version="1" parent="hkbModifier">
+		<member name="alarmTimeSeconds" type="real"/>
+		<member name="alarmEvent" type="struct" class="hkbEventProperty"/>
+		<member name="secondsElapsed" type="real"/>
+	</class>
+	<class name="hkbExpressionCondition" version="1" parent="hkbCondition">
+		<member name="expression" type="string"/>
+		<member name="compiledExpressionSet" type="ref"/>
+	</class>
+	<class name="hkbEntityPropertyAllowAimMode" version="0" parent="hkbEntityPropertyControlData">
+		<member name="restriction" type="int"/>
+	</class>
+	<class name="hkbEntityPropertyDisableWeaponSwitch" version="0" parent="hkbEntityPropertyControlData">
+	</class>
+	<class name="hkbBranchInSequenceTag" version="0" parent="hkbSequenceTag">
+		<member name="branchId" type="int"/>
+	</class>
+	<class name="hkbEntityPropertyAllowReload" version="0" parent="hkbEntityPropertyControlData">
+	</class>
+	<class name="hkbConditionChooser" version="0" parent="hkbStateChooser">
+		<member name="entries" type="ref" array="true" class="hkbConditionChooserConditionEntry"/>
+	</class>
+	<class name="hkbStateChooserEntry" version="0" parent="hkReferencedObject">
+		<member name="stateId" type="int"/>
+	</class>
+	<class name="hkbConditionChooserConditionEntry" version="0" parent="hkbStateChooserEntry">
+		<member name="condition" type="ref" class="hkbCondition"/>
+	</class>
+	<class name="hkbEntityPropertyTargetableModeData" version="0" parent="hkbEntityPropertyControlData">
+		<member name="targetableMode" type="int"/>
+	</class>
+	<class name="hkbSetBoolSequenceTag" version="0" parent="hkbSequenceTag">
+		<member name="variableIndex" type="int"/>
+		<member name="value" type="byte"/>
+		<member name="resetOnExit" type="byte"/>
+		<member name="lastPhase" type="int"/>
+	</class>
+	<class name="hkbCacheVariableModifier" version="0" parent="hkbModifier">
+		<member name="inputVariableIndex" type="int"/>
+		<member name="outputVariableIndex" type="int"/>
+		<member name="canGenerateOnSPU" type="byte"/>
+	</class>
+	<class name="hkbOnConditionModifier" version="0" parent="hkbModifier">
+		<member name="modifierOnTrue" type="ref" class="hkbModifier"/>
+		<member name="modifierOnFalse" type="ref" class="hkbModifier"/>
+		<member name="triggerCondition" type="ref" class="hkbCondition"/>
+		<member name="lastConditionValue" type="byte"/>
+	</class>
+	<class name="hkbEntityPropertyCharacterPhysicsOverride" version="0" parent="hkbEntityPropertyControlData">
+		<member name="applyLinearAccelerationAndLimits" type="byte"/>
+		<member name="applyGravity" type="byte"/>
+		<member name="restrictMovementToSurface" type="byte"/>
+	</class>
+	<class name="hkbMoveCharacterModifier" version="0" parent="hkbModifier">
+		<member name="offsetPerSecondMS" type="vec4"/>
+		<member name="timeSinceLastModify" type="real"/>
+	</class>
+	<class name="hkbAttackDistanceValidationSequenceTag" version="0" parent="hkbSequenceTag">
+		<member name="validDistance" type="real"/>
+		<member name="isWithinValidDistance" type="byte"/>
+		<member name="targetOutOfRangeEvent" type="struct" class="hkbEventProperty"/>
+		<member name="clearHandleWhenInvalid" type="byte"/>
+		<member name="targetHandle" type="ref" class="hkbHandle"/>
+		<member name="lastPhase" type="int"/>
+		<member name="cachedSelfPosition" type="vec4"/>
+	</class>
+	<class name="hkbCollisionTestSequenceTag" version="0" parent="hkbSequenceTag">
+		<member name="testDistance" type="real"/>
+		<member name="testDirection" type="vec4"/>
+		<member name="testDirectionIsLocalSpace" type="byte"/>
+		<member name="alignDirectionToGround" type="byte"/>
+		<member name="contextName" type="string"/>
+		<member name="didCollisionHitVariableIndex" type="int"/>
+		<member name="distanceToCollisionHitVariableIndex" type="int"/>
+		<member name="collisionEvent" type="int"/>
+		<member name="resetOnDeactivate" type="byte"/>
+		<member name="filter" type="struct" array="true" class="hkbCollisionTestEventPayloadFilterEntryStruct"/>
+	</class>
+	<class name="hkbCollisionTestEventPayloadFilterEntryStruct" version="0">
+		<member name="targetFilter" type="int"/>
+		<member name="entityFilter" type="int"/>
+	</class>
+	<class name="hkbWallCollisionTestSequenceTag" version="0" parent="hkbCollisionTestSequenceTag">
+	</class>
+	<class name="hkbFloorCollisionTestSequenceTag" version="0" parent="hkbCollisionTestSequenceTag">
+	</class>
+	<class name="hkbJumpModifier" version="0" parent="hkbModifier">
+		<member name="inAirDriftGain" type="real"/>
+		<member name="inAirMoveGain" type="real"/>
+		<member name="requestedHeight" type="real"/>
+		<member name="jumpingGravity" type="real"/>
+		<member name="hangJumpGravity" type="real"/>
+		<member name="fallingGravity" type="real"/>
+		<member name="hangTime" type="real"/>
+		<member name="inputSpeed" type="real"/>
+		<member name="inputDirection" type="vec4"/>
+		<member name="useInitialVelocity" type="byte"/>
+		<member name="initialVelocity" type="vec4"/>
+		<member name="startHeight" type="real"/>
+		<member name="maxDesiredHeight" type="real"/>
+		<member name="maxAchievedHeight" type="real"/>
+		<member name="elapsedTime" type="real"/>
+		<member name="hangTimeRemaining" type="real"/>
+		<member name="initialMovementRequest" type="vec4"/>
+		<member name="currentVelocity" type="vec4"/>
+		<member name="gain" type="real"/>
+		<member name="desiredVelocity" type="vec4"/>
+		<member name="outputVelocity" type="vec4"/>
+		<member name="previousPosition" type="vec4"/>
+		<member name="firstTime" type="byte"/>
+		<member name="targetHeight" type="real"/>
+		<member name="lastTimeStep" type="real"/>
+	</class>
+	<class name="hkbAttributeModifier" version="0" parent="hkbModifier">
+		<member name="assignments" type="struct" array="true" class="hkbAttributeModifierAssignment"/>
+	</class>
+	<class name="hkbAttributeModifierAssignment" version="0">
+		<member name="attributeIndex" type="int"/>
+		<member name="attributeValue" type="real"/>
+	</class>
+	<class name="hkbEvaluateExpressionModifier" version="1" parent="hkbModifier">
+		<member name="expressions" type="ref" class="hkbExpressionDataArray"/>
+		<member name="compiledExpressionSet" type="ref"/>
+		<member name="internalExpressionsData" type="void" array="true"/>
+	</class>
+	<class name="hkbExpressionDataArray" version="0" parent="hkReferencedObject">
+		<member name="expressionsData" type="struct" array="true" class="hkbExpressionData"/>
+	</class>
+	<class name="hkbExpressionData" version="0">
+		<member name="expression" type="string"/>
+		<member name="assignmentVariableIndex" type="int"/>
+		<member name="assignmentEventIndex" type="int"/>
+		<member name="eventMode" type="int"/>
+		<member name="raisedEvent" type="byte"/>
+		<member name="wasTrueInPreviousFrame" type="byte"/>
+	</class>
+	<class name="hkbCleanHandleModifier" version="0" parent="hkbModifier">
+		<member name="handle" type="ref" class="hkbHandle"/>
+	</class>
+	<class name="hkbWeightedRandomSelector" version="0" parent="hkbGenerator">
+		<member name="generators" type="ref" array="true" class="hkbWeightedRandomSelectorWeightedGenerator"/>
+		<member name="randGen" type="ref"/>
+		<member name="currentGeneratorIndex" type="int"/>
+	</class>
+	<class name="hkbWeightedRandomSelectorWeightedGenerator" version="0">
+		<member name="genWeight" type="real"/>
+		<member name="gen" type="ref" class="hkbGenerator"/>
+	</class>
+	<class name="hkbMinMaxFloatModifier" version="0" parent="hkbModifier">
+		<member name="inputValue" type="real"/>
+		<member name="outputValue" type="real"/>
+		<member name="maxLimit" type="real"/>
+		<member name="minLimit" type="real"/>
+		<member name="useMaxLimit" type="byte"/>
+		<member name="useMinLimit" type="byte"/>
+	</class>
+	<class name="hkbWeightedRandomChooser" version="0" parent="hkbStateChooser">
+		<member name="states" type="struct" array="true" class="hkbWeightedRandomChooserWeightedState"/>
+		<member name="entries" type="ref" array="true" class="hkbWeightedRandomChooserWeightedStateEntry"/>
+	</class>
+	<class name="hkbWeightedRandomChooserWeightedState" version="0">
+		<member name="stateWeight" type="real"/>
+		<member name="stateId" type="int"/>
+	</class>
+	<class name="hkbWeightedRandomChooserWeightedStateEntry" version="0" parent="hkbStateChooserEntry">
+		<member name="stateWeight" type="real"/>
+	</class>
+	<class name="hkbBoneWeightTransitionEffect" version="0" parent="hkbTransitionEffect">
+		<member name="duration" type="real"/>
+		<member name="toGeneratorStartTimeFraction" type="real"/>
+		<member name="flags" type="int"/>
+		<member name="endMode" type="int"/>
+		<member name="blendCurve" type="int"/>
+		<member name="blendSets" type="ref" array="true" class="hkbBoneWeightTransitionEffectBlendSet"/>
+		<member name="fromGenerator" type="ref"/>
+		<member name="toGenerator" type="ref"/>
+		<member name="timeRemaining" type="real"/>
+		<member name="timeInTransition" type="real"/>
+		<member name="applySelfTransition" type="byte"/>
+	</class>
+	<class name="hkbBoneWeightTransitionEffectBlendSet" version="0">
+		<member name="transitionStartFraction" type="real"/>
+		<member name="transitionEndFraction" type="real"/>
+		<member name="bones" type="int" array="true"/>
+	</class>
+	<class name="hkbFootIkControlsModifier" version="1" parent="hkbModifier">
+		<member name="controlData" type="struct" class="hkbFootIkControlData"/>
+		<member name="legs" type="struct" array="true" class="hkbFootIkControlsModifierLeg"/>
+	</class>
+	<class name="hkbFootIkControlData" version="0">
+		<member name="gains" type="struct" class="hkbFootIkGains"/>
+	</class>
+	<class name="hkbFootIkGains" version="0">
+		<member name="onOffGain" type="real"/>
+		<member name="groundAscendingGain" type="real"/>
+		<member name="groundDescendingGain" type="real"/>
+		<member name="footPlantedGain" type="real"/>
+		<member name="footRaisedGain" type="real"/>
+		<member name="footUnlockGain" type="real"/>
+		<member name="worldFromModelFeedbackGain" type="real"/>
+		<member name="errorUpDownBias" type="real"/>
+		<member name="alignWorldFromModelGain" type="real"/>
+		<member name="hipOrientationGain" type="real"/>
+	</class>
+	<class name="hkbFootIkControlsModifierLeg" version="0">
+		<member name="groundPosition" type="vec4"/>
+		<member name="ungroundedEvent" type="struct" class="hkbEventProperty"/>
+		<member name="verticalError" type="real"/>
+		<member name="hitSomething" type="byte"/>
+		<member name="isPlantedMS" type="byte"/>
+	</class>
+	<class name="hkbPieWedgeCondition" version="0" parent="hkbCondition">
+		<member name="minRadius" type="real"/>
+		<member name="maxRadius" type="real"/>
+		<member name="minAngle" type="real"/>
+		<member name="maxAngle" type="real"/>
+		<member name="invertAngleCheck" type="byte"/>
+		<member name="offsetDistance" type="real"/>
+		<member name="defaultTargetPositionIndex" type="int"/>
+		<member name="targetHandleIndex" type="int"/>
+	</class>
+	<class name="hkbActionEventPayload" version="0" parent="hkbEventPayload">
+		<member name="actionName" type="string"/>
+		<member name="contextName" type="string"/>
+	</class>
+	<class name="hkbAttachmentModifier" version="1" parent="hkbModifier">
+		<member name="sendToAttacherOnAttach" type="struct" class="hkbEventProperty"/>
+		<member name="sendToAttacheeOnAttach" type="struct" class="hkbEventProperty"/>
+		<member name="sendToAttacherOnDetach" type="struct" class="hkbEventProperty"/>
+		<member name="sendToAttacheeOnDetach" type="struct" class="hkbEventProperty"/>
+		<member name="attachmentSetup" type="ref" class="hkbAttachmentSetup"/>
+		<member name="attacherHandle" type="ref" class="hkbHandle"/>
+		<member name="attacheeHandle" type="ref" class="hkbHandle"/>
+		<member name="attacheeLayer" type="int"/>
+		<member name="attacheeRB" type="ref"/>
+		<member name="oldMotionType" type="byte"/>
+		<member name="oldFilterInfo" type="int"/>
+		<member name="attachment" type="ref"/>
+	</class>
+	<class name="hkbAttachmentSetup" version="3" parent="hkReferencedObject">
+		<member name="blendInTime" type="real"/>
+		<member name="moveAttacherFraction" type="real"/>
+		<member name="gain" type="real"/>
+		<member name="extrapolationTimeStep" type="real"/>
+		<member name="fixUpGain" type="real"/>
+		<member name="maxLinearDistance" type="real"/>
+		<member name="maxAngularDistance" type="real"/>
+		<member name="attachmentType" type="int"/>
+		<member name="ignoreRotation" type="byte"/>
+		<member name="ignoreUpComponent" type="byte"/>
+		<member name="attacherBoneName" type="string"/>
+		<member name="attacheeBoneName" type="string"/>
+		<member name="ignoreCollisionsBetweenActors" type="byte"/>
+		<member name="ignoreAttacheePhysics" type="byte"/>
+	</class>
+	<class name="hkbAttachmentSequenceTag" version="0" parent="hkbSequenceTag">
+		<member name="targetHandle" type="ref" class="hkbHandle"/>
+		<member name="targetBoneName" type="string"/>
+		<member name="selfBoneName" type="string"/>
+		<member name="ignoreRotation" type="byte"/>
+		<member name="ignoreCollisionBetweenActors" type="byte"/>
+		<member name="useContinuousAttachment" type="byte"/>
+		<member name="defaultPosition" type="vec4"/>
+		<member name="defaultRotation" type="vec4"/>
+		<member name="disablePhysics" type="byte"/>
+		<member name="targetWorldFromBone" type="ref"/>
+		<member name="selfHandle" type="struct" class="hkbHandle"/>
+		<member name="blendFraction" type="real"/>
+		<member name="mostRecentTimeStep" type="real"/>
+		<member name="selfWorldFromBone" type="vec12"/>
+	</class>
+	<class name="hkbEntityPropertyMeleeCameraRequest" version="0" parent="hkbEntityPropertyControlData">
+	</class>
+	<class name="hkbStruggleControlsModifier" version="1" parent="hkbModifier">
+		<member name="struggleType" type="string"/>
+		<member name="targetHandleIndex" type="int"/>
+	</class>
+	<class name="hkbTransformVectorModifier" version="0" parent="hkbModifier">
+		<member name="rotation" type="vec4"/>
+		<member name="translation" type="vec4"/>
+		<member name="vectorIn" type="vec4"/>
+		<member name="vectorOut" type="vec4"/>
+		<member name="rotateOnly" type="byte"/>
+		<member name="inverse" type="byte"/>
+		<member name="computeOnActivate" type="byte"/>
+		<member name="computeOnModify" type="byte"/>
+	</class>
+	<class name="hkbTargetFacingCondition" version="0" parent="hkbCondition">
+		<member name="minAngle" type="real"/>
+		<member name="maxAngle" type="real"/>
+		<member name="targetHandleIndex" type="int"/>
+	</class>
+	<class name="hkbInteractionStateChooser" version="0" parent="hkbStateChooser">
+		<member name="interactionStates" type="ref" array="true" class="hkbInteractionStateChooserInteractionState"/>
+	</class>
+	<class name="hkbInteractionStateChooserInteractionState" version="0" parent="hkbStateChooserEntry">
+		<member name="interactionKey" type="string"/>
+	</class>
+	<class name="hkbSpherePayload" version="0" parent="hkbShapePayload">
+		<member name="originOffset" type="vec4"/>
+		<member name="radius" type="real"/>
+	</class>
+	<class name="hkaRagdollInstance" version="0" parent="hkReferencedObject">
+		<member name="rigidBodies" type="ref" array="true" class="hkpRigidBody"/>
+		<member name="constraints" type="ref" array="true" class="hkpConstraintInstance"/>
+		<member name="boneToRigidBodyMap" type="int" array="true"/>
+		<member name="skeleton" type="ref" class="hkaSkeleton"/>
+	</class>
+	<class name="hkpSphereRepShape" version="0" parent="hkpShape">
+	</class>
+	<class name="hkpConvexShape" version="0" parent="hkpSphereRepShape">
+		<member name="radius" type="real"/>
+	</class>
+	<class name="hkpConvexVerticesShape" version="3" parent="hkpConvexShape">
+		<member name="aabbHalfExtents" type="vec4"/>
+		<member name="aabbCenter" type="vec4"/>
+		<member name="rotatedVertices" type="struct" array="true" class="hkpConvexVerticesShapeFourVectors"/>
+		<member name="numVertices" type="int"/>
+		<member name="externalObject" type="ref"/>
+		<member name="getFaceNormals" type="ref"/>
+		<member name="planeEquations" type="vec4" array="true"/>
+		<member name="connectivity" type="ref" class="hkpConvexVerticesConnectivity"/>
+	</class>
+	<class name="hkpConvexVerticesShapeFourVectors" version="0">
+		<member name="x" type="vec4"/>
+		<member name="y" type="vec4"/>
+		<member name="z" type="vec4"/>
+	</class>
+	<class name="hkpConvexVerticesConnectivity" version="0" parent="hkReferencedObject">
+		<member name="vertexIndices" type="int" array="true"/>
+		<member name="numVerticesPerFace" type="byte" array="true"/>
+	</class>
+	<class name="hkpBvTreeShape" version="0" parent="hkpShape">
+		<member name="bvTreeType" type="byte"/>
+	</class>
+	<class name="hkMoppBvTreeShapeBase" version="0" parent="hkpBvTreeShape">
+		<member name="code" type="ref" class="hkpMoppCode"/>
+		<member name="moppData" type="ref"/>
+		<member name="moppDataSize" type="int"/>
+		<member name="codeInfoCopy" type="vec4"/>
+	</class>
+	<class name="hkpMoppCode" version="0" parent="hkReferencedObject">
+		<member name="info" type="struct" class="hkpMoppCodeCodeInfo"/>
+		<member name="data" type="byte" array="true"/>
+		<member name="buildType" type="int"/>
+	</class>
+	<class name="hkpMoppCodeCodeInfo" version="0">
+		<member name="offset" type="vec4"/>
+	</class>
+	<class name="hkpMoppBvTreeShape" version="0" parent="hkMoppBvTreeShapeBase">
+		<member name="child" type="struct" class="hkpSingleShapeContainer"/>
+		<member name="childSize" type="int"/>
+	</class>
+	<class name="hkpShapeContainer" version="0">
+	</class>
+	<class name="hkpSingleShapeContainer" version="0" parent="hkpShapeContainer">
+		<member name="childShape" type="ref" class="hkpShape"/>
+	</class>
+	<class name="hkpShapeCollection" version="0" parent="hkpShape">
+		<member name="disableWelding" type="byte"/>
+		<member name="collectionType" type="byte"/>
+	</class>
+	<class name="hkpListShape" version="0" parent="hkpShapeCollection">
+		<member name="childInfo" type="struct" array="true" class="hkpListShapeChildInfo"/>
+		<member name="flags" type="int"/>
+		<member name="numDisabledChildren" type="int"/>
+		<member name="aabbHalfExtents" type="vec4"/>
+		<member name="aabbCenter" type="vec4"/>
+		<member name="enabledChildren" type="int" count="8"/>
+	</class>
+	<class name="hkpListShapeChildInfo" version="0">
+		<member name="shape" type="ref" class="hkpShape"/>
+		<member name="collisionFilterInfo" type="int"/>
+		<member name="shapeSize" type="int"/>
+		<member name="numChildShapes" type="int"/>
+	</class>
+	<class name="hkpCapsuleShape" version="0" parent="hkpConvexShape">
+		<member name="vertexA" type="vec4"/>
+		<member name="vertexB" type="vec4"/>
+	</class>
+	<class name="hkpConvexTransformShapeBase" version="0" parent="hkpConvexShape">
+		<member name="childShape" type="struct" class="hkpSingleShapeContainer"/>
+		<member name="childShapeSize" type="int"/>
+	</class>
+	<class name="hkpConvexTranslateShape" version="0" parent="hkpConvexTransformShapeBase">
+		<member name="translation" type="vec4"/>
+	</class>
+	<class name="hkpSphereShape" version="0" parent="hkpConvexShape">
+		<member name="pad16" type="int" count="3"/>
+	</class>
+	<class name="hkpBoxShape" version="0" parent="hkpConvexShape">
+		<member name="halfExtents" type="vec4"/>
+	</class>
+	<class name="hkpRagdollConstraintData" version="0" parent="hkpConstraintData">
+		<member name="atoms" type="struct" class="hkpRagdollConstraintDataAtoms"/>
+	</class>
+	<class name="hkpRagdollConstraintDataAtoms" version="1">
+		<member name="transforms" type="struct" class="hkpSetLocalTransformsConstraintAtom"/>
+		<member name="setupStabilization" type="struct" class="hkpSetupStabilizationAtom"/>
+		<member name="ragdollMotors" type="struct" class="hkpRagdollMotorConstraintAtom"/>
+		<member name="angFriction" type="struct" class="hkpAngFrictionConstraintAtom"/>
+		<member name="twistLimit" type="struct" class="hkpTwistLimitConstraintAtom"/>
+		<member name="coneLimit" type="struct" class="hkpConeLimitConstraintAtom"/>
+		<member name="planesLimit" type="struct" class="hkpConeLimitConstraintAtom"/>
+		<member name="ballSocket" type="struct" class="hkpBallSocketConstraintAtom"/>
+	</class>
+	<class name="hkpSetLocalTransformsConstraintAtom" version="0" parent="hkpConstraintAtom">
+		<member name="transformA" type="vec16"/>
+		<member name="transformB" type="vec16"/>
+	</class>
+	<class name="hkpSetupStabilizationAtom" version="1" parent="hkpConstraintAtom">
+		<member name="enabled" type="byte"/>
+		<member name="maxAngle" type="real"/>
+		<member name="padding" type="byte" count="8"/>
+	</class>
+	<class name="hkpRagdollMotorConstraintAtom" version="0" parent="hkpConstraintAtom">
+		<member name="isEnabled" type="byte"/>
+		<member name="initializedOffset" type="int"/>
+		<member name="previousTargetAnglesOffset" type="int"/>
+		<member name="target_bRca" type="vec12"/>
+		<member name="motors" type="ref" count="3" class="hkpConstraintMotor"/>
+	</class>
+	<class name="hkpConstraintMotor" version="0" parent="hkReferencedObject">
+		<member name="type" type="int"/>
+	</class>
+	<class name="hkpAngFrictionConstraintAtom" version="0" parent="hkpConstraintAtom">
+		<member name="isEnabled" type="byte"/>
+		<member name="firstFrictionAxis" type="byte"/>
+		<member name="numFrictionAxes" type="byte"/>
+		<member name="maxFrictionTorque" type="real"/>
+	</class>
+	<class name="hkpTwistLimitConstraintAtom" version="0" parent="hkpConstraintAtom">
+		<member name="isEnabled" type="byte"/>
+		<member name="twistAxis" type="byte"/>
+		<member name="refAxis" type="byte"/>
+		<member name="minAngle" type="real"/>
+		<member name="maxAngle" type="real"/>
+		<member name="angularLimitsTauFactor" type="real"/>
+	</class>
+	<class name="hkpConeLimitConstraintAtom" version="0" parent="hkpConstraintAtom">
+		<member name="isEnabled" type="byte"/>
+		<member name="twistAxisInA" type="byte"/>
+		<member name="refAxisInB" type="byte"/>
+		<member name="angleMeasurementMode" type="byte"/>
+		<member name="memOffsetToAngleOffset" type="byte"/>
+		<member name="minAngle" type="real"/>
+		<member name="maxAngle" type="real"/>
+		<member name="angularLimitsTauFactor" type="real"/>
+	</class>
+	<class name="hkpBallSocketConstraintAtom" version="3" parent="hkpConstraintAtom">
+		<member name="solvingMethod" type="byte"/>
+		<member name="bodiesToNotify" type="byte"/>
+		<member name="velocityStabilizationFactor" type="byte"/>
+		<member name="maxImpulse" type="real"/>
+		<member name="inertiaStabilizationFactor" type="real"/>
+	</class>
+	<class name="hkpLimitedForceConstraintMotor" version="0" parent="hkpConstraintMotor">
+		<member name="minForce" type="real"/>
+		<member name="maxForce" type="real"/>
+	</class>
+	<class name="hkpPositionConstraintMotor" version="0" parent="hkpLimitedForceConstraintMotor">
+		<member name="tau" type="real"/>
+		<member name="damping" type="real"/>
+		<member name="proportionalRecoveryVelocity" type="real"/>
+		<member name="constantRecoveryVelocity" type="real"/>
+	</class>
+	<class name="hkpLimitedHingeConstraintData" version="0" parent="hkpConstraintData">
+		<member name="atoms" type="struct" class="hkpLimitedHingeConstraintDataAtoms"/>
+	</class>
+	<class name="hkpLimitedHingeConstraintDataAtoms" version="1">
+		<member name="transforms" type="struct" class="hkpSetLocalTransformsConstraintAtom"/>
+		<member name="setupStabilization" type="struct" class="hkpSetupStabilizationAtom"/>
+		<member name="angMotor" type="struct" class="hkpAngMotorConstraintAtom"/>
+		<member name="angFriction" type="struct" class="hkpAngFrictionConstraintAtom"/>
+		<member name="angLimit" type="struct" class="hkpAngLimitConstraintAtom"/>
+		<member name="2dAng" type="struct" class="hkp2dAngConstraintAtom"/>
+		<member name="ballSocket" type="struct" class="hkpBallSocketConstraintAtom"/>
+	</class>
+	<class name="hkpAngMotorConstraintAtom" version="0" parent="hkpConstraintAtom">
+		<member name="isEnabled" type="byte"/>
+		<member name="motorAxis" type="byte"/>
+		<member name="initializedOffset" type="int"/>
+		<member name="previousTargetAngleOffset" type="int"/>
+		<member name="correspondingAngLimitSolverResultOffset" type="int"/>
+		<member name="targetAngle" type="real"/>
+		<member name="motor" type="ref" class="hkpConstraintMotor"/>
+	</class>
+	<class name="hkpAngLimitConstraintAtom" version="0" parent="hkpConstraintAtom">
+		<member name="isEnabled" type="byte"/>
+		<member name="limitAxis" type="byte"/>
+		<member name="minAngle" type="real"/>
+		<member name="maxAngle" type="real"/>
+		<member name="angularLimitsTauFactor" type="real"/>
+	</class>
+	<class name="hkp2dAngConstraintAtom" version="0" parent="hkpConstraintAtom">
+		<member name="freeRotationAxis" type="byte"/>
+	</class>
+</root>

@@ -1,0 +1,15 @@
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\IDMover\bin\Debug\net6.0\IDMover.exe
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\IDMover\bin\Debug\net6.0\IDMover.deps.json
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\IDMover\bin\Debug\net6.0\IDMover.runtimeconfig.json
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\IDMover\bin\Debug\net6.0\IDMover.dll
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\IDMover\bin\Debug\net6.0\IDMover.pdb
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\IDMover\obj\Debug\net6.0\IDMover.csproj.AssemblyReference.cache
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\IDMover\obj\Debug\net6.0\IDMover.GeneratedMSBuildEditorConfig.editorconfig
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\IDMover\obj\Debug\net6.0\IDMover.AssemblyInfoInputs.cache
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\IDMover\obj\Debug\net6.0\IDMover.AssemblyInfo.cs
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\IDMover\obj\Debug\net6.0\IDMover.csproj.CoreCompileInputs.cache
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\IDMover\obj\Debug\net6.0\IDMover.dll
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\IDMover\obj\Debug\net6.0\refint\IDMover.dll
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\IDMover\obj\Debug\net6.0\IDMover.pdb
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\IDMover\obj\Debug\net6.0\IDMover.genruntimeconfig.cache
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\IDMover\obj\Debug\net6.0\ref\IDMover.dll

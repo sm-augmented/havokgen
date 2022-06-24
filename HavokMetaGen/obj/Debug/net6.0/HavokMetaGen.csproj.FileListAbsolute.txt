@@ -1,0 +1,15 @@
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\HavokMetaGen\bin\Debug\net6.0\HavokMetaGen.exe
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\HavokMetaGen\bin\Debug\net6.0\HavokMetaGen.deps.json
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\HavokMetaGen\bin\Debug\net6.0\HavokMetaGen.runtimeconfig.json
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\HavokMetaGen\bin\Debug\net6.0\HavokMetaGen.dll
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\HavokMetaGen\bin\Debug\net6.0\HavokMetaGen.pdb
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\HavokMetaGen\obj\Debug\net6.0\HavokMetaGen.csproj.AssemblyReference.cache
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\HavokMetaGen\obj\Debug\net6.0\HavokMetaGen.GeneratedMSBuildEditorConfig.editorconfig
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\HavokMetaGen\obj\Debug\net6.0\HavokMetaGen.AssemblyInfoInputs.cache
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\HavokMetaGen\obj\Debug\net6.0\HavokMetaGen.AssemblyInfo.cs
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\HavokMetaGen\obj\Debug\net6.0\HavokMetaGen.csproj.CoreCompileInputs.cache
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\HavokMetaGen\obj\Debug\net6.0\HavokMetaGen.dll
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\HavokMetaGen\obj\Debug\net6.0\refint\HavokMetaGen.dll
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\HavokMetaGen\obj\Debug\net6.0\HavokMetaGen.pdb
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\HavokMetaGen\obj\Debug\net6.0\HavokMetaGen.genruntimeconfig.cache
+G:\_Programming\_Workspace\SpaceMarine\Tools\HavokMetaGen\HavokMetaGen\obj\Debug\net6.0\ref\HavokMetaGen.dll
